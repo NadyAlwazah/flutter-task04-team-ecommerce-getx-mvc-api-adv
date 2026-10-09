@@ -13,7 +13,7 @@ import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/main.dart';
 void main() {
   testWidgets('Counter increments smoke test', (WidgetTester tester) async {
     // Build our app and trigger a frame.
-    await tester.pumpWidget(const MyApp());
+    await tester.pumpWidget(const ModernStore());
 
     // Verify that our counter starts at 0.
     expect(find.text('0'), findsOneWidget);
