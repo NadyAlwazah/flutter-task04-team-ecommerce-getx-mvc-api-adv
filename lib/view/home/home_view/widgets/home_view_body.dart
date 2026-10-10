@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/core/constants/app_size.dart';
+import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/view/home/home_view/widgets/category_section.dart';
 import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/view/home/home_view/widgets/discover_banner.dart';
 import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/view/home/home_view/widgets/home_header.dart';
+import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/view/home/home_view/widgets/product_filter_list_view.dart';
 
 class HomeViewBody extends StatelessWidget {
   const HomeViewBody({super.key});
@@ -18,8 +20,12 @@ class HomeViewBody extends StatelessWidget {
       child: Column(
         children: [
           const HomeHeader(),
-          SizedBox(height: 32.h),
+          SizedBox(height: AppSize.s32.h),
           const DiscoverBanner(),
+          SizedBox(height: 44.h),
+          const CategoriesSection(),
+          SizedBox(height: 28.h),
+          const ProductFilterListView(),
         ],
       ),
     );

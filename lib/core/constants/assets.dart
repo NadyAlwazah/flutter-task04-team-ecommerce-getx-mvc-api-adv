@@ -4,6 +4,7 @@ class AssetsData {
 
   // Images
   static const imageBoyPng = "${_images}boy.png";
+  static const imageFirePng = "${_images}fire.png";
 
   //Icons
   static const iconBagWelcomeSvg = "${_icons}bag.svg";
