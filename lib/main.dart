@@ -25,7 +25,7 @@ class ModernStore extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         theme: ThemeData(scaffoldBackgroundColor: AppColors.backgroundColor),
         initialBinding: InitializeBinding(),
-        initialRoute: AppRoutes.kSplash,
+        initialRoute: AppRoutes.kHome,
         getPages: AppPages.getPages,
       ),
     );
