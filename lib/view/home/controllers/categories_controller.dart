@@ -1,3 +1,4 @@
+import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/controllers/products_controller.dart';
 import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/core/classes/crud.dart';
 import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/core/classes/status_class.dart';
 import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/core/constants/app_links.dart';
@@ -41,6 +42,7 @@ class CategoriesController extends GetxController {
 
   void changeCategory(int index) {
     selectedIndex = index;
+    Get.find<ProductsController>().filterByCategory(categories[index].id);
     update();
   }
 

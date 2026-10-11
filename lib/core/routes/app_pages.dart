@@ -1,3 +1,4 @@
+import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/controllers/products_controller.dart';
 import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/core/routes/app_routes.dart';
 import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/view/home/controllers/categories_controller.dart';
 import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/view/home/home_view/home_view.dart';
@@ -12,6 +13,7 @@ class AppPages {
       page: () => const HomeView(),
       binding: BindingsBuilder(() {
         Get.lazyPut(() => CategoriesController(crud: Get.find()));
+        Get.lazyPut(() => ProductsController(crud: Get.find()));
       }),
     ),
   ];
