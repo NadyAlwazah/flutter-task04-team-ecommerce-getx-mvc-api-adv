@@ -68,21 +68,4 @@ class ProductsController extends GetxController {
 
     update();
   }
-
-  Future<void> deleteProduct(int id) async {
-    final result = await crud.deleteData(endPoint: "${AppLinks.products}$id");
-
-    result.fold(
-      (failure) {
-        Get.snackbar("Error", failure.message);
-      },
-      (data) {
-        allProducts.removeWhere((product) => product.id == id);
-
-        _applyFilter();
-
-        Get.snackbar("Success", "Product deleted successfully");
-      },
-    );
-  }
 }

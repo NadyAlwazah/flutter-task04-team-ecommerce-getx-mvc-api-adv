@@ -38,7 +38,7 @@ class HomeViewBody extends StatelessWidget {
 
           const ProductsGridView(),
 
-          SliverToBoxAdapter(child: SizedBox(height: AppSize.s32.h)),
+          SliverToBoxAdapter(child: SizedBox(height: 115.h)),
         ],
       ),
     );

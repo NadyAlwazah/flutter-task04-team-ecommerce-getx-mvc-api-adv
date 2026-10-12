@@ -105,17 +105,20 @@ class ProductCard extends StatelessWidget {
           Positioned(
             right: AppSize.s14,
             bottom: 15,
-            child: Container(
-              width: 22.r,
-              height: 22.r,
-              decoration: BoxDecoration(
-                color: Colors.white.withValues(alpha: .2),
-                shape: BoxShape.circle,
-              ),
-              child: Icon(
-                Icons.north_east_rounded,
-                color: Colors.white,
-                size: AppSize.s14.r,
+            child: InkWell(
+              onTap: () {},
+              child: Container(
+                width: 22.r,
+                height: 22.r,
+                decoration: BoxDecoration(
+                  color: Colors.white.withValues(alpha: .2),
+                  shape: BoxShape.circle,
+                ),
+                child: Icon(
+                  Icons.north_east_rounded,
+                  color: Colors.white,
+                  size: AppSize.s14.r,
+                ),
               ),
             ),
           ),

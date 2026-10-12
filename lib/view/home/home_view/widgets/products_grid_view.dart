@@ -46,7 +46,7 @@ class ProductsGridView extends StatelessWidget {
               offset: Offset(0, index.isOdd ? 29.h : 0),
               child: ProductCard(
                 productModel: controller.products[index],
-                isFavorite: true,
+                isFavorite: false,
               ),
             );
           }, childCount: controller.products.length),
