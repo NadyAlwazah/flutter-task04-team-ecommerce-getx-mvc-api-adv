@@ -16,7 +16,7 @@ class ProductCard extends StatelessWidget {
     super.key,
     this.onFavoriteTap,
     required this.productModel,
-    required this.isFavorite,
+    this.isFavorite = false,
   });
   final ProductModel productModel;
   final bool isFavorite;

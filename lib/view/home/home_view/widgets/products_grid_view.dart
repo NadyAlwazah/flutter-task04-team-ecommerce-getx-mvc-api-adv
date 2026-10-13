@@ -7,7 +7,7 @@ import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/core/constants/st
 import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/widgets/app_loader.dart';
 import 'package:get/get.dart';
 
-import 'product_card.dart';
+import '../../../../widgets/product_card.dart';
 
 class ProductsGridView extends StatelessWidget {
   const ProductsGridView({super.key});
@@ -74,10 +74,7 @@ class ProductsGridView extends StatelessWidget {
           delegate: SliverChildBuilderDelegate((context, index) {
             return Transform.translate(
               offset: Offset(0, index.isOdd ? 29.h : 0),
-              child: ProductCard(
-                productModel: controller.products[index],
-                isFavorite: false,
-              ),
+              child: ProductCard(productModel: controller.products[index]),
             );
           }, childCount: controller.products.length),
           gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(

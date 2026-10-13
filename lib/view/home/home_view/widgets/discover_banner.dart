@@ -11,13 +11,14 @@ class DiscoverBanner extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 126.h,
+      height: 155.h,
       width: double.infinity,
       child: Stack(
         clipBehavior: Clip.none,
         children: [
           Center(
             child: Column(
+              mainAxisSize: MainAxisSize.min,
               children: [
                 Text(
                   'DISCOVER',

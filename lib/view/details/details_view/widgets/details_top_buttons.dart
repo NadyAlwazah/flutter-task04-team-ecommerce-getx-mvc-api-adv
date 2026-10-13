@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/core/constants/app_size.dart';
 import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/core/constants/assets.dart';
 import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/models/product_model.dart';
 import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/widgets/circle_button.dart';
@@ -13,8 +14,8 @@ class DetailsTopButtons extends StatelessWidget {
   Widget build(BuildContext context) {
     return Positioned(
       top: 62.h,
-      left: 24.w,
-      right: 24.w,
+      left: AppSize.s24.w,
+      right: AppSize.s24.w,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
@@ -34,7 +35,7 @@ class DetailsTopButtons extends StatelessWidget {
                   size: 24.r,
                 ),
               ),
-              SizedBox(width: 8.w),
+              SizedBox(width: AppSize.s8.w),
               CircleButton(
                 onTap: () {},
                 backgroundColor: const Color(0xFF0F0F0F).withValues(alpha: .16),
