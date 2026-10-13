@@ -10,4 +10,5 @@ class AssetsData {
   static const iconArrowBackSvg = "${_icons}arrow_back.svg";
   static const iconSearchSvg = "${_icons}search.svg";
   static const iconHeartOutlineSvg = "${_icons}heart_outline.svg";
+  static const iconLogoSvg = "${_icons}logo.svg";
 }
