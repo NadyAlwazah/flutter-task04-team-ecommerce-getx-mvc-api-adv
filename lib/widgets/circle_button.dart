@@ -6,12 +6,14 @@ class CircleButton extends StatelessWidget {
   final Widget child;
   final double width;
   final double height;
+  final Color? backgroundColor;
   const CircleButton({
     super.key,
     required this.child,
     this.onTap,
     this.width = 58,
     this.height = 58,
+    this.backgroundColor,
   });
 
   @override
@@ -23,7 +25,7 @@ class CircleButton extends StatelessWidget {
         height: height.r,
         decoration: BoxDecoration(
           shape: BoxShape.circle,
-          color: const Color(0xFF0F0F0F),
+          color: backgroundColor ?? const Color(0xFF0F0F0F),
           border: Border.all(color: Colors.white.withOpacity(0.15), width: 1),
         ),
         child: Center(child: child),

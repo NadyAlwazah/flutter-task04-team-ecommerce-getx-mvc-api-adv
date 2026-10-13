@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/controllers/products_controller.dart';
 import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/core/classes/status_class.dart';
+import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/core/constants/app_colors.dart';
+import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/core/constants/styles.dart';
 import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/widgets/app_loader.dart';
 import 'package:get/get.dart';
 
@@ -19,25 +21,53 @@ class ProductsGridView extends StatelessWidget {
         }
 
         if (controller.status == StatusClass.noInternet) {
-          return const SliverToBoxAdapter(
-            child: Center(child: Text('No Internet Connection')),
+          return SliverFillRemaining(
+            child: Center(
+              child: Text(
+                'No Internet Connection',
+                style: Styles.textStyle14W600PlusJakartaSans.copyWith(
+                  color: AppColors.primary,
+                ),
+              ),
+            ),
           );
         }
 
         if (controller.status == StatusClass.noData) {
-          return const SliverToBoxAdapter(
-            child: Center(child: Text('No Data Available')),
+          return SliverFillRemaining(
+            child: Center(
+              child: Text(
+                'No Data Available',
+                style: Styles.textStyle14W600PlusJakartaSans.copyWith(
+                  color: AppColors.primary,
+                ),
+              ),
+            ),
           );
         }
 
         if (controller.status == StatusClass.serverError) {
-          return const SliverToBoxAdapter(
-            child: Center(child: Text('Server Error')),
+          return SliverFillRemaining(
+            child: Center(
+              child: Text(
+                'Server Error',
+                style: Styles.textStyle14W600PlusJakartaSans.copyWith(
+                  color: AppColors.primary,
+                ),
+              ),
+            ),
           );
         }
         if (controller.products.isEmpty) {
-          return const SliverToBoxAdapter(
-            child: Center(child: Text('No products in this category')),
+          return SliverFillRemaining(
+            child: Center(
+              child: Text(
+                'No products in this category',
+                style: Styles.textStyle14W600PlusJakartaSans.copyWith(
+                  color: AppColors.primary,
+                ),
+              ),
+            ),
           );
         }
         return SliverGrid(
