@@ -4,6 +4,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/core/constants/app_size.dart';
 import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/core/constants/assets.dart';
 import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/models/product_model.dart';
+import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/view/details/details_view/widgets/product_image_preview.dart';
 import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/widgets/circle_button.dart';
 import 'package:get/get.dart';
 
@@ -37,7 +38,12 @@ class DetailsTopButtons extends StatelessWidget {
               ),
               SizedBox(width: AppSize.s8.w),
               CircleButton(
-                onTap: () {},
+                onTap: () {
+                  Get.dialog(
+                    ProductImagePreview(images: productModel.images),
+                    barrierColor: Colors.black.withValues(alpha: .55),
+                  );
+                },
                 backgroundColor: const Color(0xFF0F0F0F).withValues(alpha: .16),
                 child: SvgPicture.asset(
                   AssetsData.iconFullscreenSvg,
