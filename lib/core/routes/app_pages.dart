@@ -1,5 +1,5 @@
-import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/view/create_acount_section/create_acount_section_controller/create_acount_controller.dart';
-import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/view/create_acount_section/create_acount_section_view/create_acount_screen.dart';
+import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/view/auth/create_acount_section/create_acount_section_controller/create_acount_controller.dart';
+import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/view/auth/create_acount_section/create_acount_section_view/create_acount_screen.dart';
 import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/view/forget_password_section/forget_password_section_view.dart/forget_password_screen.dart';
 import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/view/forget_password_section/forget_password_section_view.dart/virty_password_screen.dart';
 
@@ -20,6 +20,8 @@ import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/view/search/searc
 
 import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/view/splash/splash_view.dart';
 import 'package:get/get.dart';
+import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/bindings/sign_in_binding.dart';
+import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/view/auth/sign_in/sign_in_view.dart';
 
 class AppPages {
   static final List<GetPage<dynamic>> getPages = [
@@ -74,6 +76,11 @@ class AppPages {
       name: AppRoutes.kOnBoarding,
       page: () => const OnboardingView(),
       binding: OnboardingBinding(),
+    ),
+    GetPage(
+      name: AppRoutes.kSignin,
+      page: () => const SignInView(),
+      binding: SignInBinding(),
     ),
   ];
 }

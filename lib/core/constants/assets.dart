@@ -7,6 +7,7 @@ class AssetsData {
   static const imageCreateAcount = "${_images}Rectangle.png";
   static const imageGirl1Png = "${_images}girl1.png";
   static const imageGirl2Png = "${_images}girl2.png";
+  static const imageSignInBannerPng = "${_images}sign_in_banner.png";
   static const imageFirePng = "${_images}fire.png";
 
   //Icons
@@ -39,6 +40,9 @@ class AssetsData {
   static const iconLogoSvg = "${_icons}logo.svg";
   static const iconStarWhiteSvg = "${_icons}star_white.svg";
   static const iconStarOrangeSvg = "${_icons}star_orange.svg";
+  static const iconAppleSvg = "${_icons}apple.svg";
+  static const iconGoogleSvg = "${_icons}google.svg";
+  static const iconFacebookSvg = "${_icons}facebook.svg";
   static const iconDiscountBadgeSvg = "${_icons}icon_discount_badge.svg";
   static const iconDiscoverStyleOuterFrameSvg = "${_icons}style_outline.svg";
   static const iconDiscoverStyleInnerFrameSvg = "${_icons}style_inner.svg";
