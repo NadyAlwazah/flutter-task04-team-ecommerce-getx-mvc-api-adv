@@ -5,6 +5,8 @@ import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/view/bottom_bar/b
 import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/view/home/controllers/categories_controller.dart';
 import 'package:get/get.dart';
 
+import '../controllers/cart_controller.dart';
+
 class BottomBarBinding extends Bindings {
   @override
   void dependencies() {

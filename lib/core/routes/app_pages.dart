@@ -2,6 +2,7 @@ import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/bindings/bottom_b
 import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/core/classes/crud.dart';
 import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/core/routes/app_routes.dart';
 import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/view/bottom_bar/bottom_bar_view/bottom_bar_view.dart';
+import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/view/cart/cart_screen/cart_screen.dart';
 import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/view/details/details_view/details_view.dart';
 import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/view/search/search_controller/product_search_controller.dart';
 import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/view/search/search_view/search_view.dart';
@@ -30,5 +31,6 @@ class AppPages {
         );
       }),
     ),
+    GetPage(name: AppRoutes.kCart, page: () => const CartScreen()),
   ];
 }

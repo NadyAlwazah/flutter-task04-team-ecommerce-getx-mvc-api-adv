@@ -5,6 +5,8 @@ import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/core/constants/ap
 import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/core/constants/app_size.dart';
 import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/core/constants/assets.dart';
 import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/core/constants/styles.dart';
+import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/widgets/circle_button.dart';
+import 'package:get/get.dart';
 
 class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   final String title;
@@ -33,7 +35,15 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
                 ),
               ),
             )
-          : SvgPicture.asset(AssetsData.iconArrowBackSvg, fit: BoxFit.contain),
+          : CircleButton(
+              onTap: () {
+                Get.back();
+              },
+              child: SvgPicture.asset(
+                AssetsData.iconArrowBackSvg,
+                fit: BoxFit.contain,
+              ),
+            ),
       title: Text(
         title.toUpperCase(),
         style: Styles.textStyle20W500BodoniModa.copyWith(

@@ -17,4 +17,7 @@ class AppString {
       'Items saved to your personal sanctuary remain reserved for 14 days before returning to the global collection';
   static const String discoverNewArrivals = 'DISCOVER NEW ARRIVALS';
   static const String noData = "No Items available ";
+
+  // cart screen
+  static const String cart = 'CART';
 }

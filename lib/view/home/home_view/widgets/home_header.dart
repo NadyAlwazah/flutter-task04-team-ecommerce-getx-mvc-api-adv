@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/controllers/cart_controller.dart';
 import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/core/constants/app_colors.dart';
 import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/core/constants/assets.dart';
 import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/core/constants/styles.dart';
@@ -50,9 +51,11 @@ class HomeHeader extends StatelessWidget {
         SizedBox(width: 14.w),
 
         CircleButton(
-          onTap: () {},
+          onTap: () {
+            Get.toNamed(AppRoutes.kCart);
+          },
           child: IconWithBadge(
-            count: 2,
+            count: Get.find<CartController>().cartItems.length,
             child: SvgPicture.asset(
               AssetsData.iconBagWelcomeSvg,
               width: 24.r,

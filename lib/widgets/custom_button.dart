@@ -45,6 +45,7 @@ class CustomButton extends StatelessWidget {
     return ElevatedButton(
       onPressed: onPressed,
       style: ElevatedButton.styleFrom(
+        padding: EdgeInsets.zero,
         backgroundColor: backgroundColor,
         shadowColor: Colors.transparent,
         minimumSize: Size(double.infinity, heightButton.h),

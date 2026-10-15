@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/controllers/cart_controller.dart';
 import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/core/constants/styles.dart';
 import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/models/product_model.dart';
+import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/widgets/app_action_dialog.dart';
 import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/widgets/custom_button.dart';
+import 'package:get/get.dart';
 
 class AddToCartButton extends StatelessWidget {
   const AddToCartButton({super.key, required this.productModel});
@@ -22,7 +25,21 @@ class AddToCartButton extends StatelessWidget {
         ),
         radius: 40.r,
         backgroundColor: Colors.white,
-        onPressed: () {},
+        onPressed: () async {
+          final added = await Get.find<CartController>().addToCart(
+            productId: productModel.id,
+          );
+          if (added) {
+            Get.dialog(
+              AppActionDialog(
+                title: "Added to Cart",
+                message: 'This product has been added to your cart',
+                icon: Icons.add_shopping_cart_outlined,
+                product: productModel,
+              ),
+            );
+          }
+        },
       ),
     );
   }

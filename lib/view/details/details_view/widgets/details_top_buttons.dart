@@ -6,6 +6,7 @@ import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/core/constants/ap
 import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/core/constants/assets.dart';
 import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/models/product_model.dart';
 import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/view/details/details_view/widgets/product_image_preview.dart';
+import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/widgets/app_action_dialog.dart';
 import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/widgets/circle_button.dart';
 import 'package:get/get.dart';
 
@@ -44,6 +45,15 @@ class DetailsTopButtons extends StatelessWidget {
 
                     if (added) {
                       Get.dialog(
+                        AppActionDialog(
+                          title: 'Added to wishlist',
+                          message:
+                              'This product has been added to your wishlist',
+                          icon: Icons.bookmark_added,
+                          product: productModel,
+                        ),
+                      );
+                      /*Get.dialog(
                         AlertDialog(
                           backgroundColor: AppColors.backgroundItem,
                           shape: RoundedRectangleBorder(
@@ -83,6 +93,15 @@ class DetailsTopButtons extends StatelessWidget {
                           ),
                         ),
                         barrierDismissible: true,
+                      );*/
+                    } else {
+                      Get.dialog(
+                        AppActionDialog(
+                          title: 'Removed from wishlist',
+                          message: 'This product has been removed from your wishlist',
+                          icon: Icons.bookmark_remove,
+                          product: productModel,
+                        ),
                       );
                     }
                   },
