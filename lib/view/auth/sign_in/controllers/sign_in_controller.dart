@@ -59,7 +59,7 @@ class SignInController extends GetxController {
       accessToken: tokens.accessToken,
       refreshToken: tokens.refreshToken,
     );
-    Get.offAllNamed(AppRoutes.kHome);
+    Get.offAllNamed(AppRoutes.kBottomBar);
   }
 
   String _messageFor(Failure failure) {

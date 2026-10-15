@@ -6,10 +6,10 @@ import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/core/constants/ap
 import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/core/constants/assets.dart';
 import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/core/constants/styles.dart';
 import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/core/routes/app_routes.dart';
-import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/view/create_acount_section/create_acount_section_view/widgets/divider.dart';
+import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/view/auth/create_acount_section/create_acount_section_view/widgets/divider.dart';
+import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/widgets/app_text_field.dart';
 import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/widgets/circle_button.dart';
 import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/widgets/custom_button.dart';
-import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/widgets/custom_text_field.dart';
 import 'package:get/get.dart';
 
 class ForgetPasswordScreen extends StatelessWidget {

@@ -6,10 +6,10 @@ import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/core/constants/ap
 import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/core/constants/assets.dart';
 import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/core/constants/styles.dart';
 import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/core/helpful_function/validate.dart';
-import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/view/create_acount_section/create_acount_section_controller/create_acount_controller.dart';
+import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/view/auth/create_acount_section/create_acount_section_controller/create_acount_controller.dart';
+import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/widgets/app_text_field.dart';
 
-import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/widgets/custom_text_field.dart';
-import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/view/create_acount_section/create_acount_section_view/widgets/divider.dart';
+import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/view/auth/create_acount_section/create_acount_section_view/widgets/divider.dart';
 import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/widgets/circle_button.dart';
 import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/widgets/custom_button.dart';
 import 'package:get/get.dart';
@@ -123,25 +123,35 @@ class CreateAcount extends StatelessWidget {
                 ),
                 SizedBox(height: 30.h),
                 //TEXT
-                Text.rich(
-                  textAlign: TextAlign.center,
-                  TextSpan(
-                    children: [
-                      TextSpan(
-                        text: '   Already have an account? ',
-                        style: Styles.textStyle16W500ClashDisplay.copyWith(
-                          color: Colors.white,
-                        ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(
+                      'Already have an account? ',
+                      style: Styles.textStyle16W500ClashDisplay.copyWith(
+                        color: Colors.white,
                       ),
-                      TextSpan(
-                        text: 'Sign In',
-                        style: Styles.textStyle16W500ClashDisplay.copyWith(
-                          color: AppColors.primary,
-                        ),
+                    ),
+
+                    GestureDetector(
+                      onTap: () => Get.back(),
+                      child: Column(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          Text(
+                            "Sign in",
+                            style: Styles.textStyle16W500ClashDisplay.copyWith(
+                              color: AppColors.primary,
+                              decoration: TextDecoration.underline,
+                              decorationColor: AppColors.primary,
+                            ),
+                          ),
+                        ],
                       ),
-                    ],
-                  ),
+                    ),
+                  ],
                 ),
+
                 SizedBox(height: 31.h),
                 DividerWidget(),
                 //diveder
