@@ -22,4 +22,5 @@ class AssetsData {
   static const iconDiscoverStyleOuterFrameSvg = "${_icons}style_outline.svg";
   static const iconDiscoverStyleInnerFrameSvg = "${_icons}style_inner.svg";
   static const iconHeartFilledSvg = "${_icons}heart_filled.svg";
+  static const iconFullscreenSvg = "${_icons}fullscreen_icon.svg";
 }

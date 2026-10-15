@@ -13,4 +13,5 @@ abstract class AppRoutes {
   static const kEditProfile = '/edit_profile';
   static const kNotifications = '/notifications';
   static const kBottomBar = '/bottom_bar';
+  static const kSearch = '/search';
 }

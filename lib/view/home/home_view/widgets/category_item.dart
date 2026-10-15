@@ -47,13 +47,14 @@ class CategoryItem extends StatelessWidget {
               ),
             ),
             SizedBox(height: AppSize.s8.h),
-            Text(
-              category.name.toUpperCase(),
-              textAlign: TextAlign.center,
-              maxLines: 1,
-              overflow: TextOverflow.ellipsis,
-              style: Styles.textStyle16W500ClashDisplay.copyWith(
-                color: isSelected ? AppColors.primary : Colors.white,
+            FittedBox(
+              fit: BoxFit.scaleDown,
+              child: Text(
+                category.name.toUpperCase(),
+                maxLines: 1,
+                style: Styles.textStyle16W500ClashDisplay.copyWith(
+                  color: isSelected ? AppColors.primary : Colors.white,
+                ),
               ),
             ),
           ],
