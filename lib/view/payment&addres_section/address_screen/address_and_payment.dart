@@ -1,34 +1,30 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/view/payment&addres_section/address_screen/payment_screen.dart';
+import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/view/payment&addres_section/address_widget/address_form_dialog.dart';
 import 'package:get/get.dart';
-
 import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/core/constants/app_colors.dart';
 import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/core/constants/app_size.dart';
 import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/core/constants/assets.dart';
 import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/core/constants/styles.dart';
-
 import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/view/payment&addres_section/address_controller/address_controller.dart';
 import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/view/payment&addres_section/address_controller/payment_card_controller.dart';
-
 import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/view/payment&addres_section/address_model/address_model.dart';
-import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/view/payment&addres_section/address_model/payment_card_model.dart';
-
 import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/view/payment&addres_section/address_widget/add_button.dart';
 import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/view/payment&addres_section/address_widget/addres_card.dart';
-import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/view/payment&addres_section/address_widget/address_form_dialog.dart';
-import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/view/payment&addres_section/address_widget/payment_main_card.dart';
-// ملاحظة: تأكد من إنشاء هذا الحوار الخاص بالبطاقات إذا لم يكن موجوداً لديك
-// import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/view/payment&addres_section/address_widget/payment_card_form_dialog.dart';
+import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/view/payment&addres_section/address_widget/payment_form_dialog.dart';
 
 class AddressAndPaymentScreen extends StatelessWidget {
   AddressAndPaymentScreen({super.key});
 
-  final AddressPaymentController controller =
-      Get.put(AddressPaymentController());
+  final AddressPaymentController controller = Get.put(
+    AddressPaymentController(),
+  );
 
-  final PaymentCardController paymentCardController =
-      Get.put(PaymentCardController());
+  final PaymentCardController paymentCardController = Get.put(
+    PaymentCardController(),
+  );
 
   @override
   Widget build(BuildContext context) {
@@ -44,10 +40,7 @@ class AddressAndPaymentScreen extends StatelessWidget {
                 children: [
                   IconButton(
                     onPressed: () => Navigator.pop(context),
-                    icon: const Icon(
-                      Icons.arrow_back,
-                      color: AppColors.white,
-                    ),
+                    icon: const Icon(Icons.arrow_back, color: AppColors.white),
                   ),
                   Column(
                     children: [
@@ -59,18 +52,13 @@ class AddressAndPaymentScreen extends StatelessWidget {
                       ),
                       Text(
                         'ATELIER CLIENT PRIVÉ',
-                        style:
-                            Styles.textStyle11W500PlusJakartaSans.copyWith(
+                        style: Styles.textStyle11W500PlusJakartaSans.copyWith(
                           color: AppColors.brown,
                         ),
                       ),
                     ],
                   ),
-                  SvgPicture.asset(
-                    AssetsData.truee,
-                    width: 15.w,
-                    height: 18.h,
-                  ),
+                  SvgPicture.asset(AssetsData.truee, width: 15.w, height: 18.h),
                 ],
               ),
 
@@ -98,21 +86,19 @@ class AddressAndPaymentScreen extends StatelessWidget {
                             ),
                             decoration: BoxDecoration(
                               color: controller.selectedTab.value == 0
-                                  ? AppColors.backgroundColor
-                                      .withOpacity(0.2)
+                                  ? AppColors.backgroundColor.withOpacity(0.2)
                                   : Colors.transparent,
                               borderRadius: BorderRadius.circular(40),
                             ),
                             child: Center(
                               child: Text(
                                 'Saved Addresses',
-                                style: Styles
-                                    .textStyle12W500PlusJakartaSans
+                                style: Styles.textStyle12W500PlusJakartaSans
                                     .copyWith(
-                                  color: controller.selectedTab.value == 0
-                                      ? const Color(0xffDD6040)
-                                      : AppColors.brownLight,
-                                ),
+                                      color: controller.selectedTab.value == 0
+                                          ? const Color(0xffDD6040)
+                                          : AppColors.brownLight,
+                                    ),
                               ),
                             ),
                           ),
@@ -131,21 +117,19 @@ class AddressAndPaymentScreen extends StatelessWidget {
                             ),
                             decoration: BoxDecoration(
                               color: controller.selectedTab.value == 1
-                                  ? AppColors.backgroundColor
-                                      .withOpacity(0.2)
+                                  ? AppColors.backgroundColor.withOpacity(0.2)
                                   : Colors.transparent,
                               borderRadius: BorderRadius.circular(40),
                             ),
                             child: Center(
                               child: Text(
                                 'Payment Methods',
-                                style: Styles
-                                    .textStyle12W500PlusJakartaSans
+                                style: Styles.textStyle12W500PlusJakartaSans
                                     .copyWith(
-                                  color: controller.selectedTab.value == 1
-                                      ? AppColors.primary
-                                      : AppColors.brownLight,
-                                ),
+                                      color: controller.selectedTab.value == 1
+                                          ? AppColors.primary
+                                          : AppColors.brownLight,
+                                    ),
                               ),
                             ),
                           ),
@@ -165,7 +149,7 @@ class AddressAndPaymentScreen extends StatelessWidget {
                     return _buildAddressesSection();
                   }
 
-                  return _buildPaymentSection();
+                  return PaymentScreen();
                 }),
               ),
             ],
@@ -174,10 +158,6 @@ class AddressAndPaymentScreen extends StatelessWidget {
       ),
     );
   }
-
-  // ============================================
-  // Saved Addresses section
-  // ============================================
 
   Widget _buildAddressesSection() {
     return Column(
@@ -199,8 +179,7 @@ class AddressAndPaymentScreen extends StatelessWidget {
                   const SizedBox(height: 8),
                   Text(
                     'Manage your white-glove shipping destinations',
-                    style:
-                        Styles.textStyle11W500PlusJakartaSans.copyWith(
+                    style: Styles.textStyle11W500PlusJakartaSans.copyWith(
                       color: AppColors.brown,
                       fontSize: 13.sp,
                     ),
@@ -215,7 +194,7 @@ class AddressAndPaymentScreen extends StatelessWidget {
               iconButtonAddCard: AssetsData.plus,
               onTap: () async {
                 final newAddress = await Get.dialog<AddressModel>(
-                  const  PaymentCardFormDialog (),
+                  const AddressFormDialog(),
                 );
 
                 if (newAddress != null) {
@@ -240,16 +219,14 @@ class AddressAndPaymentScreen extends StatelessWidget {
                 return AddressCard(
                   address: address,
                   iconNumberPhone: AssetsData.phone,
-
                   onEdit: () async {
-                   /* final updatedAddress =
-                        await Get.dialog<AddressModel>(
-                       AddressFormDialog (address: address),
+                    final updatedAddress = await Get.dialog<AddressModel>(
+                      AddressFormDialog(address: address),
                     );
 
                     if (updatedAddress != null) {
                       controller.editAddress(index, updatedAddress);
-                    }*/
+                    }
                   },
 
                   onDelete: () {
@@ -276,9 +253,7 @@ class AddressAndPaymentScreen extends StatelessWidget {
                             },
                             child: const Text(
                               'Delete',
-                              style: TextStyle(
-                                color: AppColors.primary,
-                              ),
+                              style: TextStyle(color: AppColors.primary),
                             ),
                           ),
                         ],
@@ -293,149 +268,6 @@ class AddressAndPaymentScreen extends StatelessWidget {
               },
             ),
           ),
-        ),
-      ],
-    );
-  }
-
-  // ============================================
-  // Payment Section
-  // ============================================
-
-  Widget _buildPaymentSection() {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Row(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Expanded(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    'Payment Instruments',
-                    style: Styles.textStyle20W500BodoniModa.copyWith(
-                      color: const Color(0xffE5E2E1),
-                    ),
-                  ),
-                  const SizedBox(height: 8),
-                  Text(
-                    'Curated vault & vaulted digital assets',
-                    style:
-                        Styles.textStyle11W500PlusJakartaSans.copyWith(
-                      color: AppColors.brown,
-                      fontSize: 13.sp,
-                    ),
-                  ),
-                ],
-              ),
-            ),
-
-            AddNewButton(
-              text: 'Add New\nCard',
-              iconButtonAddCard: AssetsData.iconAddNewCard,
-              width: 122,
-              onTap: () async {
-                // ملاحظة: قم بإنشاء واستخدام حوار خاص ببطاقات الدفع بدلاً من AddressFormDialog
-                final newCard = await Get.dialog<PaymentCardModel>(
-                  const PaymentCardFormDialog(), // تأكد من إنشاء هذا الـ Dialog أو تعديله ليناسب البطاقات
-                );
-
-                if (newCard != null) {
-                  paymentCardController.addCard(newCard);
-                }
-              },
-            ),
-          ],
-        ),
-
-        SizedBox(height: AppSize.s24),
-
-        Expanded(
-          child: Obx(() {
-            final cards = paymentCardController.paymentCards;
-
-            if (cards.isEmpty) {
-              return Center(
-                child: Text(
-                  'No payment methods added yet.',
-                  style:
-                      Styles.textStyle12W500PlusJakartaSans.copyWith(
-                    color: AppColors.brownLight,
-                  ),
-                ),
-              );
-            }
-
-            return ListView.separated(
-              padding: EdgeInsets.only(bottom: 16.h),
-              itemCount: cards.length,
-              separatorBuilder: (_, __) => SizedBox(height: 16.h),
-              itemBuilder: (context, index) {
-                final card = cards[index];
-
-                return PaymentMainCard(
-                  card: card,
-
-                  // Edit card
-                  onEdit: () async {
-                    final updatedCard =
-                        await Get.dialog<PaymentCardModel>(
-                      PaymentCardFormDialog(card: card),  
-                    );
-
-                    if (updatedCard != null) {
-                      paymentCardController.editCard(
-                        index,
-                        updatedCard,
-                      );
-                    }
-                  },
-
-                  // Delete card
-                  onDelete: () {
-                    Get.dialog(
-                      AlertDialog(
-                        backgroundColor: const Color(0xff201F1F),
-                        title: const Text(
-                          'Delete card?',
-                          style: TextStyle(color: Colors.white),
-                        ),
-                        content: const Text(
-                          'Are you sure you want to delete this card?',
-                          style: TextStyle(color: Colors.white70),
-                        ),
-                        actions: [
-                          TextButton(
-                            onPressed: () => Get.back(),
-                            child: const Text('Cancel'),
-                          ),
-                          TextButton(
-                            onPressed: () {
-                              Get.back();
-                              paymentCardController.deleteCard(index);
-                            },
-                            child: const Text(
-                              'Delete',
-                              style: TextStyle(
-                                color: AppColors.primary,
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
-                    );
-                  },
-
-                  // Set default card
-                  onSetDefault: () {
-                    paymentCardController.setDefaultCard(index);
-                  },
-                );
-              },
-            );
-          }),
         ),
       ],
     );

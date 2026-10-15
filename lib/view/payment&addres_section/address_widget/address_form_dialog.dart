@@ -1,57 +1,69 @@
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/view/payment&addres_section/address_model/payment_card_model.dart';
 
-class PaymentCardFormDialog extends StatefulWidget {
-  final PaymentCardModel? card;
+import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/core/constants/assets.dart';
+import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/view/payment&addres_section/address_model/address_model.dart';
 
-  const PaymentCardFormDialog({
+class AddressFormDialog extends StatefulWidget {
+  final AddressModel? address;
+
+  const AddressFormDialog({
     super.key,
-    this.card,
+    this.address,
   });
 
   @override
-  State<PaymentCardFormDialog> createState() => _PaymentCardFormDialogState();
+  State<AddressFormDialog> createState() => _AddressFormDialogState();
 }
 
-class _PaymentCardFormDialogState extends State<PaymentCardFormDialog> {
-  late final TextEditingController cardNumberController;
-  late final TextEditingController cardHolderController;
-  late final TextEditingController expireDateController;
+class _AddressFormDialogState extends State<AddressFormDialog> {
+  late final TextEditingController titleController;
+  late final TextEditingController nameController;
+  late final TextEditingController addressController;
+  late final TextEditingController phoneController;
 
   @override
   void initState() {
     super.initState();
-    cardNumberController = TextEditingController(text: widget.card?.cardNumber ?? '');
-    cardHolderController = TextEditingController(text: widget.card?.cardHolder ?? '');
-    expireDateController = TextEditingController(text: widget.card?.expireDate ?? '');
+
+    titleController =
+        TextEditingController(text: widget.address?.title ?? '');
+    nameController =
+        TextEditingController(text: widget.address?.name ?? '');
+    addressController =
+        TextEditingController(text: widget.address?.address ?? '');
+    phoneController =
+        TextEditingController(text: widget.address?.phone ?? '');
   }
 
   @override
   void dispose() {
-    cardNumberController.dispose();
-    cardHolderController.dispose();
-    expireDateController.dispose();
+    titleController.dispose();
+    nameController.dispose();
+    addressController.dispose();
+    phoneController.dispose();
     super.dispose();
   }
 
   @override
   Widget build(BuildContext context) {
-    final isEditing = widget.card != null;
+    final isEditing = widget.address != null;
 
     return AlertDialog(
       backgroundColor: const Color(0xff201F1F),
       title: Text(
-        isEditing ? 'Edit Card' : 'Add New Card',
+        isEditing ? 'Edit Address' : 'Add New Address',
         style: const TextStyle(color: Colors.white),
       ),
       content: SingleChildScrollView(
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-            _buildField(cardNumberController, 'Card Number'),
-            _buildField(cardHolderController, 'Card Holder Name'),
-            _buildField(expireDateController, 'Expire Date (MM/YY)'),
+            _buildField(titleController, 'Address Type (Home / Office)'),
+            _buildField(nameController, 'Full Name'),
+            _buildField(addressController, 'Address'),
+            _buildField(phoneController, 'Phone Number'),
           ],
         ),
       ),
@@ -61,14 +73,17 @@ class _PaymentCardFormDialogState extends State<PaymentCardFormDialog> {
           child: const Text('Cancel'),
         ),
         ElevatedButton(
-          onPressed: _saveCard,
-          child: Text(isEditing ? 'Save Changes' : 'Add Card'),
+          onPressed: _saveAddress,
+          child: Text(isEditing ? 'Save Changes' : 'Add Address'),
         ),
       ],
     );
   }
 
-  Widget _buildField(TextEditingController controller, String label) {
+  Widget _buildField(
+    TextEditingController controller,
+    String label,
+  ) {
     return Padding(
       padding: const EdgeInsets.only(bottom: 12),
       child: TextField(
@@ -88,23 +103,38 @@ class _PaymentCardFormDialogState extends State<PaymentCardFormDialog> {
     );
   }
 
-  void _saveCard() {
-    if (cardNumberController.text.trim().isEmpty ||
-        cardHolderController.text.trim().isEmpty ||
-        expireDateController.text.trim().isEmpty) {
+  void _saveAddress() {
+    if (titleController.text.trim().isEmpty ||
+        nameController.text.trim().isEmpty ||
+        addressController.text.trim().isEmpty ||
+        phoneController.text.trim().isEmpty) {
       Get.snackbar(
         'Missing information',
-        'Please fill in all card fields.',
+        'Please fill in all address fields.',
       );
       return;
     }
 
+    final oldAddress = widget.address;
+    final title = titleController.text.trim();
+
+    // Keep the existing icon when editing.
+    // For a new address, choose an icon according to its type.
+    final String addressIcon = oldAddress?.icon ??
+        (title.toLowerCase() == 'office'
+            ? AssetsData.office
+            : AssetsData.home);
+
     Get.back(
-      result: PaymentCardModel(
-        cardNumber: cardNumberController.text.trim(),
-        cardHolder: cardHolderController.text.trim(),
-        expireDate: expireDateController.text.trim(),
-        isDefault: widget.card?.isDefault ?? false,
+      result: AddressModel(
+        title: title,
+        name: nameController.text.trim(),
+        address: addressController.text.trim(),
+        phone: phoneController.text.trim(),
+        icon: addressIcon,
+        isPrimary: oldAddress?.isPrimary ?? false,
+        whiteGloveAvailable:
+            oldAddress?.whiteGloveAvailable ?? false,
       ),
     );
   }

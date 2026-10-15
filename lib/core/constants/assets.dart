@@ -36,6 +36,10 @@ static const office = "${_icons}office.svg";
 static const iconCardChip="${_icons}Metallic Chip Graphic.svg";
 static const contactLess="${_icons}Contactless Icon_css-transform.svg";
 static const masterLogo="${_icons}Master Logo Mockup.svg";
+static const appleGraphic="${_icons}Material Icon or Apple Graphic Anchor.svg";
+static const paymentCard="${_icons}payment_card_controller.svg";
+static const paybal="${_icons}paybal_icon.svg";
+
 
 
 

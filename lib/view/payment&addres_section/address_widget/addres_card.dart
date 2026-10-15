@@ -171,7 +171,7 @@ Row(
     const SizedBox(width: AppSize.s7),
 
 GestureDetector(
-      onTap: onEdit,
+      onTap: onDelete,
       child: SvgPicture.asset(width: 32,height: 32,
         AssetsData.buttonDeleteAddress,
       ),
