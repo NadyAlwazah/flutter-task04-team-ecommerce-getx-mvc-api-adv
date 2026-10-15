@@ -9,8 +9,8 @@ Widget itemCountWidget({required int count}) {
   return Container(
     height: AppSize.s26.h,
     padding: EdgeInsets.symmetric(
-      horizontal: AppSize.s4.w,
-      vertical: AppSize.s12.h,
+      horizontal: AppSize.s12.w,
+      vertical: AppSize.s4.h,
     ),
     decoration: BoxDecoration(
       color: AppColors.backgroundItem,

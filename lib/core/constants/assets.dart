@@ -6,7 +6,7 @@ class AssetsData {
   static const imageBoyPng = "${_images}boy.png";
   static const imageDefault = "${_images}default.jpg";
   static const wishlistBannerBackground =
-      "${_images}wishlist_banner_background.jpg";
+      "${_images}wishlist_banner_background.png";
   static const imageFirePng = "${_images}fire.png";
 
   //Icons

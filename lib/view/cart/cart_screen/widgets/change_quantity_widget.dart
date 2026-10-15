@@ -2,8 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/core/constants/app_colors.dart';
 import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/core/constants/styles.dart';
 import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/view/cart/cart_controller/cart_controller.dart';
-import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/widgets/custom_elevated_button.dart';
 import 'package:get/get.dart';
+
+import '../../../../widgets/custom_button.dart';
 
 class ChangeQuantityWidget extends StatelessWidget {
   const ChangeQuantityWidget({super.key});
@@ -15,16 +16,14 @@ class ChangeQuantityWidget extends StatelessWidget {
         return Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            CustomElevatedButton(
+            CustomButton(
               onPressed: () {
                 controller.increaseQuantity();
               },
-              color: AppColors.backgroundButtonGrey,
-              child: Text(
-                '+',
-                style: Styles.textStyle16W500ClashDisplay.copyWith(
-                  color: AppColors.whiteText,
-                ),
+              backgroundColor: AppColors.backgroundButtonGrey,
+              text: '+',
+              textStyle: Styles.textStyle16W500ClashDisplay.copyWith(
+                color: AppColors.whiteText,
               ),
             ),
             Text(
@@ -33,17 +32,15 @@ class ChangeQuantityWidget extends StatelessWidget {
                 color: AppColors.whiteText,
               ),
             ),
-            CustomElevatedButton(
+            CustomButton(
               onPressed: () {
                 controller.decreaseQuantity();
               },
-              color: AppColors.backgroundButtonGrey,
-              child: Text(
-                '-',
-                style: Styles.textStyle16W500ClashDisplay.copyWith(
-                  color: AppColors.whiteText,
-                ),
+              backgroundColor: AppColors.backgroundButtonGrey,
+              textStyle: Styles.textStyle16W500ClashDisplay.copyWith(
+                color: AppColors.whiteText,
               ),
+              text: '-',
             ),
           ],
         );

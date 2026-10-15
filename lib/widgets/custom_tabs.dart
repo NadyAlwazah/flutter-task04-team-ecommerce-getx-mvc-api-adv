@@ -17,7 +17,7 @@ class CustomFilterTabs extends StatelessWidget {
   Widget build(BuildContext context) {
     return SizedBox(
       height: AppSize.s48.h,
-      child: ListView.builder(
+      child: ListView.separated(
         shrinkWrap: true,
         itemCount: tabs.length,
         scrollDirection: Axis.horizontal,
@@ -28,8 +28,8 @@ class CustomFilterTabs extends StatelessWidget {
             onTap: onSelect,
             child: Container(
               padding: EdgeInsets.symmetric(
-                horizontal: AppSize.s8.w,
-                vertical: AppSize.s16.h,
+                horizontal: AppSize.s16.w,
+                vertical: AppSize.s10.h,
               ),
               decoration: BoxDecoration(
                 color: isSelected
@@ -37,7 +37,7 @@ class CustomFilterTabs extends StatelessWidget {
                     : AppColors.backgroundItem,
                 borderRadius: BorderRadius.circular(AppSize.s9999.r),
                 border: Border.all(
-                  color: AppColors.whiteText.withOpacity(0.7),
+                  color: AppColors.white.withOpacity(0.7),
                   width: AppSize.s1.w,
                 ),
                 boxShadow: isSelected
@@ -54,6 +54,7 @@ class CustomFilterTabs extends StatelessWidget {
             ),
           );
         },
+        separatorBuilder: (context, index) => SizedBox(width: AppSize.s8.w),
       ),
     );
   }

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/view/bottom_bar/bottom_bar_controller/bottom_bar_controller.dart';
 import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/view/bottom_bar/bottom_bar_view/widgets/custom_bottom_bar.dart';
 import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/view/home/home_view/home_view.dart';
+import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/view/wishlist/wishlist_screen/wishlist_screen.dart';
 import 'package:get/get.dart';
 
 class BottomBarView extends GetView<BottomBarController> {
@@ -10,7 +11,7 @@ class BottomBarView extends GetView<BottomBarController> {
   static const List<Widget> _pages = [
     HomeView(),
     Text('Explore'),
-    Text('Wishlist'),
+    WishlistScreen(),
     Text('Orders'),
     Text('Favorite'),
     Text('Profile'),

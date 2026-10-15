@@ -1,14 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/core/constants/app_colors.dart';
 import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/core/constants/app_size.dart';
 import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/core/constants/app_string.dart';
 import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/core/constants/styles.dart';
 import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/models/product_model.dart';
 import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/widgets/circle_button.dart';
-import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/widgets/custom_elevated_button.dart';
 
 import '../../../../core/constants/assets.dart';
+import '../../../../widgets/custom_button.dart';
 
 class ProductWishlistCard extends StatelessWidget {
   final ProductModel product;
@@ -34,6 +35,7 @@ class ProductWishlistCard extends StatelessWidget {
               ClipRRect(
                 borderRadius: BorderRadius.circular(AppSize.s30.r),
                 child: Container(
+                  padding: EdgeInsets.symmetric(vertical: AppSize.s2.h),
                   color: Colors.transparent,
                   height: AppSize.s196.h,
                   width: double.infinity,
@@ -53,61 +55,65 @@ class ProductWishlistCard extends StatelessWidget {
                 top: AppSize.s10.h,
                 right: AppSize.s10.w,
                 child: CircleButton(
-                  height: AppSize.s10.h,
-                  width: AppSize.s10.w,
-                  child: Image.asset(AssetsData.iconHeartOutlineSvg),
+                  height: AppSize.s32,
+                  width: AppSize.s32,
+
+                  child: SvgPicture.asset(
+                    AssetsData.iconHeartFilledSvg,
+                    color: AppColors.heartFilledColor,
+                  ),
                 ),
               ),
             ],
           ),
-          Container(
-            height: AppSize.s116.h,
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  product.category.name,
-                  style: Styles.textStyle10W600PlusJakartaSans.copyWith(
-                    color: AppColors.atelierTitle,
-                  ),
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                product.title,
+                style: Styles.textStyle10W600PlusJakartaSans.copyWith(
+                  color: AppColors.wishlistItemTitleColor,
                 ),
+                overflow: TextOverflow.ellipsis,
+              ),
 
-                Text(
-                  product.description,
-                  style: Styles.textStyle16W500BodoniModa.copyWith(
-                    overflow: TextOverflow.ellipsis,
-                  ),
+              Text(
+                product.description,
+                style: Styles.textStyle16W500BodoniModa.copyWith(
+                  overflow: TextOverflow.ellipsis,
+                  color: AppColors.whiteText,
                 ),
-                SizedBox(height: AppSize.s8.h),
-                Text(
-                  '\$${product.price}',
-                  style: Styles.textStyle14W600PlusJakartaSans.copyWith(
-                    color: AppColors.priceColor,
-                  ),
+              ),
+              //SizedBox(height: AppSize.s8.h),
+              Text(
+                '\$${product.price}',
+                style: Styles.textStyle14W600PlusJakartaSans.copyWith(
+                  color: AppColors.priceColor,
                 ),
-                SizedBox(height: AppSize.s12.h),
-                CustomElevatedButton(
+              ),
+              SizedBox(
+                height: AppSize.s40.h,
+                width: AppSize.s139.w,
+                child: CustomButton(
                   onPressed: () {},
-                  isSmallButton: true,
-                  child: Row(
-                    children: [
-                      Image.asset(
-                        AssetsData.iconBagWelcomeSvg,
-                        width: AppSize.s10.w,
-                        height: AppSize.s12.h,
-                        color: AppColors.black,
-                      ),
-                      Text(
-                        AppString.addToBag,
-                        style: Styles.textStyle10W600PlusJakartaSans.copyWith(
-                          color: AppColors.brownText,
-                        ),
-                      ),
-                    ],
+                  radius: AppSize.s9999.r,
+                  iconTextSpacing: AppSize.s4,
+                  icon: SizedBox(
+                    width: AppSize.s11.w,
+                    height: AppSize.s14.h,
+                    child: SvgPicture.asset(
+                      AssetsData.iconBagWelcomeSvg,
+                      fit: BoxFit.contain,
+                      color: AppColors.black,
+                    ),
                   ),
+                  textStyle: Styles.textStyle10W600PlusJakartaSans.copyWith(
+                    color: AppColors.brownText,
+                  ),
+                  text: AppString.addToBag,
                 ),
-              ],
-            ),
+              ),
+            ],
           ),
         ],
       ),

@@ -15,4 +15,8 @@ class AppColors {
   static const Color tabTextColor = Color(0xFFDCC2B0);
   static const Color greyText = Color(0xFF808080);
   static const Color backgroundButtonGrey = Color(0xFF262626);
+  static const Color white = Color(0xFFFFFFFF);
+  static const Color greyBannerButtonBackground = Color(0xFF2A2A2A);
+  static const Color heartFilledColor = Color(0xFFFE932C);
+  static const Color wishlistItemTitleColor = Color(0xFFA38C7C);
 }
