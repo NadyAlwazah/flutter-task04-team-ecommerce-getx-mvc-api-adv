@@ -7,6 +7,7 @@ class AssetsData {
   static const imageDefault = "${_images}default.jpg";
   static const wishlistBannerBackground =
       "${_images}wishlist_banner_background.jpg";
+  static const imageFirePng = "${_images}fire.png";
 
   //Icons
   static const iconBagWelcomeSvg = "${_icons}bag.svg";
@@ -16,4 +17,9 @@ class AssetsData {
   static const iconMenuSvg = "${_icons}menu.svg";
   static const iconArchiveSvg = "${_icons}archive.svg";
   static const iconDeleteSvg = "${_icons}delete.svg";
+
+  static const iconDiscountBadgeSvg = "${_icons}icon_discount_badge.svg";
+  static const iconDiscoverStyleOuterFrameSvg = "${_icons}style_outline.svg";
+  static const iconDiscoverStyleInnerFrameSvg = "${_icons}style_inner.svg";
+  static const iconHeartFilledSvg = "${_icons}heart_filled.svg";
 }
