@@ -4,8 +4,6 @@ import 'package:get/get.dart';
 class SplashBinding extends Bindings {
   @override
   void dependencies() {
-    // put وليس lazyPut: الـ View لا تقرأ الـ Controller،
-    // لكن onReady يجب أن يعمل ليبدأ المؤقت.
     Get.put(SplashController());
   }
 }

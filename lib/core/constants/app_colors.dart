@@ -7,4 +7,5 @@ class AppColors {
   static const Color backgroundItem = Color(0xFF1C1B1B);
   static const Color orbitLine = Color(0x66FFFFFF);
   static const Color orbitDot = Color(0xFFA0675A);
+  static const Color watermark = Color(0xFF262626);
 }
