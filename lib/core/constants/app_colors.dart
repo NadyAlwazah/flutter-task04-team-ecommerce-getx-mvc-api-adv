@@ -24,5 +24,9 @@ class AppColors {
  static const Color isLogOutBoarder=Color.fromARGB(100, 115, 0, 0);
  static const Color isLogOutTextColor=Color(0xFFFFB4AB);
  static const Color backgroundContainerColor=Color(0xFF2A2A2A);
- }
+
  
+  static const Color orbitLine = Color(0x66FFFFFF);
+  static const Color orbitDot = Color(0xFFA0675A);
+  static const Color watermark = Color(0xFF262626);
+}

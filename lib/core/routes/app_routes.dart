@@ -6,16 +6,14 @@ abstract class AppRoutes {
   static const kForgotPassword = '/forgot_password';
   static const kVerifyCode = '/verify_code';
   static const kNewPassword = '/new_password';
-  static const kHome = '/home';
   static const kDetails = '/details';
   static const kSeePhotos = '/see_photos';
-  static const kWishlist = '/wishlist';
-  static const kFavorites = '/favorites';
   static const kCart = '/cart';
   static const kAddressAndPayment = '/address_and_payment';
-  static const kProfile = '/profile';
   static const kEditProfile = '/edit_profile';
   static const kNotifications = '/notifications';
   static const kOrderHistoryAndTracking = '/order_history_and_tracking';
   static const kPastOrders = '/past_order_screen';
+  static const kBottomBar = '/bottom_bar';
+  static const kSearch = '/search';
 }
