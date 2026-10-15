@@ -13,7 +13,6 @@ import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/core/routes/app_r
 import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/view/my_order/my_order_screen/my_order_screen.dart';
 import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/view/my_order/my_order_screen/past_order_screen.dart';
 import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/view/profil_section/edite_profile_screen/edite_profile_screen.dart';
-import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/view/profil_section/profile_screens/peofile_screen.dart';
 import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/view/bottom_bar/bottom_bar_view/bottom_bar_view.dart';
 import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/view/details/details_view/details_view.dart';
 import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/view/search/search_controller/product_search_controller.dart';
@@ -24,11 +23,16 @@ import 'package:get/get.dart';
 
 class AppPages {
   static final List<GetPage<dynamic>> getPages = [
-    GetPage(name: AppRoutes.kOrderHistoryAndTracking, page: () => const MyOrderScreen()),
-    GetPage(name: AppRoutes.kProfile, page: () => const ProfileScreen()),
-    GetPage(name: AppRoutes.kEditProfile, page: () => const EditeProfileScreen()),
+    GetPage(
+      name: AppRoutes.kOrderHistoryAndTracking,
+      page: () => const MyOrderScreen(),
+    ),
+    GetPage(
+      name: AppRoutes.kEditProfile,
+      page: () => const EditeProfileScreen(),
+    ),
     GetPage(name: AppRoutes.kPastOrders, page: () => const PastOrderScreen()),
-  
+
     GetPage(
       name: AppRoutes.kSignup,
       page: () => CreateAcount(),
@@ -41,12 +45,13 @@ class AppPages {
     GetPage(name: AppRoutes.kVerifyCode, page: () => VirtyCodeScreen()),
     GetPage(
       name: AppRoutes.kForgotPassword,
-      page: () => ForgetPasswordScreen(),),
+      page: () => ForgetPasswordScreen(),
+    ),
     GetPage(
       name: AppRoutes.kSplash,
       page: () => const SplashView(),
       binding: SplashBinding(),
-),
+    ),
     GetPage(
       name: AppRoutes.kBottomBar,
       page: () => const BottomBarView(),

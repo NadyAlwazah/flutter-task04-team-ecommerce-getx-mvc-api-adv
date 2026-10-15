@@ -8,7 +8,6 @@ import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/core/constants/st
 import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/view/forget_password_section/forget_password_section_view.dart/widgets/numer.dart';
 import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/widgets/circle_button.dart';
 import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/widgets/custom_button.dart';
-import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/widgets/custom_text_field.dart';
 
 class VirtyCodeScreen extends StatelessWidget {
   VirtyCodeScreen({super.key});

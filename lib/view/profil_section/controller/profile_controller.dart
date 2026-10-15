@@ -1,15 +1,15 @@
 // ignore_for_file: avoid_print
 
 import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/core/helpful_function/image_picker_fun.dart';
-import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/view/profil_section/edite_profile_screen/widgets/edite_data_container.dart';
 import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/view/profil_section/model/user_fake_data.dart';
 import 'package:get/get.dart';
 import 'package:image_picker/image_picker.dart';
 
 class ProfileController extends GetxController {
-   final Rxn<File> profileImage = Rxn<File>();
+  final Rxn<File> profileImage = Rxn<File>();
   final UserFakeData userFakeData = UserFakeData();
 
   late final RxString fullName;
@@ -60,7 +60,6 @@ class ProfileController extends GetxController {
     super.onClose();
   }
 
-
   final Rxn<File> selectedImage = Rxn<File>();
 
   String get profileImagePath => userFakeData.user.profileImageUrl;
@@ -68,18 +67,18 @@ class ProfileController extends GetxController {
   void updateProfileImage(File image) {
     selectedImage.value = image;
   }
-Future<void> changeProfileImage() async {
-  try {
-    final XFile? image =
-        await ImagePickerHelper.pickImageFromGallery();
 
-    if (image == null) return;
+  Future<void> changeProfileImage() async {
+    try {
+      final XFile? image = await ImagePickerHelper.pickImageFromGallery();
 
-    profileImage.value = File(image.path);
+      if (image == null) return;
 
-    print('Image selected: ${image.path}');
-  } catch (e) {
-    print('Image picker error: $e');
+      profileImage.value = File(image.path);
+
+      print('Image selected: ${image.path}');
+    } catch (e) {
+      print('Image picker error: $e');
+    }
   }
-}
 }
