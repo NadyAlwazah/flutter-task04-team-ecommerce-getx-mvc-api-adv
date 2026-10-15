@@ -4,6 +4,8 @@ import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/core/routes/app_r
 import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/view/onboarding/onboarding_view.dart';
 import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/view/splash/splash_view.dart';
 import 'package:get/get.dart';
+import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/bindings/sign_in_binding.dart';
+import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/view/auth/sign_in/sign_in_view.dart';
 
 class AppPages {
   static final List<GetPage<dynamic>> getPages = [
@@ -16,6 +18,11 @@ class AppPages {
       name: AppRoutes.kOnBoarding,
       page: () => const OnboardingView(),
       binding: OnboardingBinding(),
+    ),
+    GetPage(
+      name: AppRoutes.kSignin,
+      page: () => const SignInView(),
+      binding: SignInBinding(),
     ),
   ];
 }
