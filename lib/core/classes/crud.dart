@@ -7,8 +7,6 @@ import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/core/helpful_func
 import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/core/network/server_helper.dart';
 import 'package:http/http.dart' as http;
 
-import '../helpful_function/check_internet.dart';
-
 class Crud {
   ///Get Request
   Future<Either<Failure, dynamic>> getData({

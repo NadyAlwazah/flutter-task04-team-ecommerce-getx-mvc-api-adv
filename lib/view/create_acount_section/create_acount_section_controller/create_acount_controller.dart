@@ -53,7 +53,7 @@ class RegisterController extends GetxController {
         print('register SUCCESS');
         print('Navigating to: home}');
         Get.snackbar('تم انشاء الحساب بنجاح ', "");
-        Get.offAllNamed(AppRoutes.kHome);
+        Get.offAllNamed(AppRoutes.kSignin);
       },
     );
   }
