@@ -4,10 +4,14 @@ class AssetsData {
 
   // Images
   static const imageBoyPng = "${_images}boy.png";
+  static const imageCreateAcount = "${_images}Rectangle.png";
 
   //Icons
   static const iconBagWelcomeSvg = "${_icons}bag.svg";
   static const iconArrowBackSvg = "${_icons}arrow_back.svg";
   static const iconSearchSvg = "${_icons}search.svg";
   static const iconHeartOutlineSvg = "${_icons}heart_outline.svg";
+  static const icongoogleSvg = "${_icons}googleIcons.svg";
+  static const iconfacebookSvg = "${_icons}facebookIcons.svg";
+  static const iconappleSvg = "${_icons}appleIcons.svg";
 }

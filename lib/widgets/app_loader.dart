@@ -1,6 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/core/constants/app_colors.dart';
 
+import '../core/constants/app_colors.dart';
+
 class AppLoader extends StatelessWidget {
   final double radius;
   final Color? color;
