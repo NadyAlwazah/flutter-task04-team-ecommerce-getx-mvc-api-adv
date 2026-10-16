@@ -4,6 +4,7 @@ import 'package:flutter_svg/svg.dart';
 import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/core/constants/app_colors.dart';
 import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/core/constants/app_size.dart';
 import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/core/constants/styles.dart';
+import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/view/notifaction_section/notification_widget/notification_action_badge.dart';
 import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/view/notifaction_section/notifications_controller/notification_contrtoller.dart';
 import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/view/notifaction_section/notifications_model/notification_model.dart';
 import 'package:get/get_core/src/get_main.dart';
@@ -90,28 +91,12 @@ class NotificationUnreadCard extends StatelessWidget {
       
             const SizedBox(height:AppSize.s10),
       
-            Container(width:110 ,
-              padding: const EdgeInsets.symmetric(
-                horizontal: 12,
-                vertical: 6,
-              ),
-              decoration: BoxDecoration(
-              color: notification.colorContainerActionText,
-                borderRadius: BorderRadius.circular(50),
-              ),
-              child: Row(
-                children: [
-                  SvgPicture.asset(
-          notification.iconActionText,
-        ),
-        SizedBox(width: AppSize.s4,),
-                  Text(
-                    notification.actionText ?? '',
-                    style: Styles.textStyle12W500PlusJakartaSans.copyWith(color: AppColors.white,fontSize: 12),
-                  ),
-                ],
-              ),
-            ),
+            NotificationActionBadge(
+  text: notification.actionText ?? '',
+  iconPath: notification.iconActionText,
+  backgroundColor: notification.colorContainerActionText,
+)
+            
           ],
         ),
       ),
