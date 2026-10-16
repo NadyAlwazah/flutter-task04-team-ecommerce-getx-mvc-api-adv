@@ -5,6 +5,7 @@ import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/core/constants/ap
 import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/core/constants/app_size.dart';
 import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/core/constants/assets.dart';
 import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/core/constants/styles.dart';
+import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/core/routes/app_routes.dart';
 import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/view/my_order/my_order_screen/my_order_screen.dart';
 import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/view/profil_section/controller/profile_controller.dart';
 import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/view/profil_section/profile_screens/widget/account_concierge.dart';
@@ -79,12 +80,3 @@ class ProfileScreen extends StatelessWidget {
 
    
 }
-
-
-
-
-
-  
-
-  
-

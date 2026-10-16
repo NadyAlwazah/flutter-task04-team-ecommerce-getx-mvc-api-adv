@@ -5,7 +5,7 @@ import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/core/constants/ap
 import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/core/constants/app_size.dart';
 import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/core/constants/assets.dart';
 import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/core/constants/styles.dart';
-import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/core/helpful_function/validate.dart';
+import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/core/helpful_function/validators.dart';
 import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/view/auth/create_acount_section/create_acount_section_controller/create_acount_controller.dart';
 import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/widgets/app_text_field.dart';
 
@@ -55,7 +55,7 @@ class CreateAcount extends StatelessWidget {
                   controller: nameController,
                   hintText: "John Doe",
                   validator: (value) {
-                    return Validator.nameValidator(value);
+                    return Validators.nameValidator(value);
                   },
                 ),
                 SizedBox(height: AppSize.s20.h),
@@ -70,7 +70,7 @@ class CreateAcount extends StatelessWidget {
                   controller: emailController,
                   hintText: "example@gamil.com",
                   validator: (value) {
-                    return Validator.emailValidator(value);
+                    return Validators.email(value);
                   },
                 ),
                 SizedBox(height: AppSize.s20.h),
@@ -86,7 +86,7 @@ class CreateAcount extends StatelessWidget {
                   hintText: "********",
 
                   validator: (value) {
-                    return Validator.passwordValidator(value);
+                    return Validators.password(value);
                   },
                 ),
                 SizedBox(height: 28.h),
@@ -103,7 +103,6 @@ class CreateAcount extends StatelessWidget {
                       );
                     }
                   },
-                  // backgroundColor: AppColors.primary,
                   radius: 150,
                 ),
                 SizedBox(height: 43.h),

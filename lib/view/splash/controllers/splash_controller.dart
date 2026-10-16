@@ -4,7 +4,7 @@ import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/core/services/onb
 import 'package:get/get.dart';
 
 class SplashController extends GetxController {
-  static const _splashDuration = Duration(seconds: 5);
+  static const _splashDuration = Duration(seconds: 3);
 
   final AuthService _authService = Get.find<AuthService>();
 
