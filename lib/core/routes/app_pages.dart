@@ -7,6 +7,7 @@ import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/bindings/onboardi
 import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/bindings/splash_binding.dart';
 import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/core/routes/app_routes.dart';
 import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/view/auth/new_password/controllers/new_password_controller.dart';
+import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/view/details/details_controller/details_controller.dart';
 import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/view/onboarding/onboarding_view.dart';
 
 import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/bindings/bottom_bar_binding.dart';
@@ -78,6 +79,9 @@ class AppPages {
     GetPage(
       name: AppRoutes.kDetails,
       page: () => DetailsView(productModel: Get.arguments),
+      binding: BindingsBuilder(() {
+        Get.lazyPut<DetailsController>(() => DetailsController());
+      }),
     ),
     GetPage(
       name: AppRoutes.kSearch,
