@@ -231,17 +231,14 @@ class CartController extends GetxController {
     );
   }
 
-  // كمية عنصر محدد
   int getQuantity(int index) {
     return cartItems[index]['quantity'] as int;
   }
 
-  // القياس لعنصر محدد
   String getSize(int index) {
     return cartItems[index]['size'] as String;
   }
 
-  // ID المنتج لعنصر محدد
   int getProductId(int index) {
     return cartItems[index]['productId'] as int;
   }
