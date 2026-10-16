@@ -67,7 +67,7 @@ class ProfileScreen extends StatelessWidget {
           icon:AssetsData.contactUS, onTap:(){}, isLogOut: false,),
       const SizedBox(height:AppSize.s4,),
          AccountConcierge(title:'Log Out', subtitle:'Sign out of this session',
-          icon:AssetsData.logOut, onTap:(){}, isLogOut: T,),
+          icon:AssetsData.logOut, onTap:(){controller.logout();}, isLogOut: T,),
           const SizedBox(height: AppSize.s40,),
           Text('ATELIER HAUTE COUTURE',style: Styles.textStyle20W500BodoniModa.copyWith(color:AppColors.atelierTextColor,fontStyle:FontStyle.italic,height: 1.4),),
             const SizedBox(height: AppSize.s4,),

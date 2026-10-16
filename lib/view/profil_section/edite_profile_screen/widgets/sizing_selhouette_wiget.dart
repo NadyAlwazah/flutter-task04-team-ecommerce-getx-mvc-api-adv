@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/core/constants/app_colors.dart';
 import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/core/constants/app_size.dart';
 import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/core/constants/styles.dart';
@@ -9,8 +10,10 @@ class SizingScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: const EdgeInsets.all(18),
+    return Container( constraints: BoxConstraints(
+    minWidth:308.h,
+  ),
+      padding: const EdgeInsets.symmetric(vertical:20,horizontal:12),
       decoration: BoxDecoration(
         color: AppColors.backgroundItem,
         borderRadius: BorderRadius.circular(24.0),

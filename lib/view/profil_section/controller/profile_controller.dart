@@ -4,6 +4,8 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/core/helpful_function/image_picker_fun.dart';
+import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/core/routes/app_routes.dart';
+import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/core/services/auth_service.dart';
 import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/view/profil_section/model/user_fake_data.dart';
 import 'package:get/get.dart';
 import 'package:image_picker/image_picker.dart';
@@ -21,7 +23,7 @@ class ProfileController extends GetxController {
   final emailController = TextEditingController();
   final phoneController = TextEditingController();
   final birthDateController = TextEditingController();
-
+  final formKey = GlobalKey<FormState>();
   @override
   void onInit() {
     super.onInit();
@@ -81,4 +83,11 @@ class ProfileController extends GetxController {
       print('Image picker error: $e');
     }
   }
+  final AuthService authService = Get.find<AuthService>();
+
+Future<void> logout() async {
+  await authService.logout();
+
+  Get.offAllNamed(AppRoutes.kSignin);
+}
 }

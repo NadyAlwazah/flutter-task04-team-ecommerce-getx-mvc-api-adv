@@ -15,7 +15,7 @@ class OrderTracking extends StatelessWidget {
   Widget build(BuildContext context) {
     final order = OrdersFakeData.activeOrders.first;
     return Container(
-      padding: const EdgeInsets.all(16),
+      padding: const EdgeInsets.symmetric(horizontal: 16,vertical:16),
       decoration: BoxDecoration(
         color: AppColors.prePaidColor,
         borderRadius: BorderRadius.circular(48),
@@ -81,45 +81,58 @@ class OrderTracking extends StatelessWidget {
           ),
           const SizedBox(height: AppSize.s20),
           Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            mainAxisAlignment: MainAxisAlignment.start,
             children: [
-              Row(
-                spacing: 6,
-                children: [
-                  Text(
-                    'CARRIER  ',
-                    style: Styles.textStyle13W400PlusJakartaSans.copyWith(
-                      fontSize: 10,
-                      color: AppColors.textColor,
+              Expanded(
+                child: Row(
+                  spacing: 6,
+                  children: [
+                    Flexible(
+                      child: Text(
+                        'CARRIER  ',
+                        style: Styles.textStyle13W400PlusJakartaSans.copyWith(
+                          fontSize: 10,
+                          color: AppColors.textColor,
+                        ),
+                      ),
                     ),
-                  ),
-                  Text(
-                    order.carrier,
-                    style: Styles.textStyle13W400PlusJakartaSans.copyWith(
-                      fontWeight: FontWeight.bold,
-                      color: Colors.white,
-                      height: 1.5,
+                    Expanded(
+                      child: Text(
+                        order.carrier,
+                        style: Styles.textStyle13W400PlusJakartaSans.copyWith(
+                          fontWeight: FontWeight.bold,
+                          color: Colors.white,
+                          height: 1.5,
+                        ),
+                      ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
-              Row(
-                spacing: 6,
-                children: [
-                  Text(
-                    'WAYBILL  ',
-                    style: Styles.textStyle13W400PlusJakartaSans.copyWith(
-                      fontSize: 10,
-                      color: AppColors.textColor,
+              const SizedBox(width:AppSize.s4,),
+              Expanded(
+                child: Row(
+                  spacing: 6,
+                  children: [
+                    Flexible(
+                      child: Text(
+                        'WAYBILL  ',
+                        style: Styles.textStyle13W400PlusJakartaSans.copyWith(
+                          fontSize: 10,
+                          color: AppColors.textColor,
+                        ),
+                      ),
                     ),
-                  ),
-                  Text(
-                    order.waybill,
-                    style: Styles.textStyle11W500PlusJakartaSans.copyWith(
-                      color: AppColors.goldTextColor,
+                    Expanded(
+                      child: Text(
+                        order.waybill,
+                        style: Styles.textStyle11W500PlusJakartaSans.copyWith(
+                          color: AppColors.goldTextColor,
+                        ),
+                      ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
             ],
           ),

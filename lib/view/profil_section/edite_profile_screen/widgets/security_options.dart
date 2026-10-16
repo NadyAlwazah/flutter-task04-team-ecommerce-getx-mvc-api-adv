@@ -17,7 +17,9 @@ final bool showIndicator;
     return InkWell(
       onTap: onTap,
       borderRadius: BorderRadius.circular(16),
-      child: Container(height:80.h,
+      child: Container( constraints: BoxConstraints(
+    minHeight:80.h,
+  ),
         padding: const EdgeInsets.symmetric(horizontal:20, vertical: 12),
         decoration: BoxDecoration(border: BoxBorder.all(color:AppColors.backgroundContainerColor,width: 1),
           color:AppColors.backgroundItem,

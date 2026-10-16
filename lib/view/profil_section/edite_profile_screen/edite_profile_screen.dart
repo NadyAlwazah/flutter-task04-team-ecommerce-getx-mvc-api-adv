@@ -30,6 +30,8 @@ final controller = Get.find<ProfileController>();
         padding: const EdgeInsets.all(10),
         child: InkWell(
       onTap: () {
+        if (controller.formKey.currentState!.validate()) {
+  
   saveProfile(
     profileController: Get.find<ProfileController>(),
     fullName: controller.nameController.text,
@@ -37,7 +39,8 @@ final controller = Get.find<ProfileController>();
     phoneNumber: controller.phoneController.text,
     dateOfBirth: controller.birthDateController.text,
   );
-},
+  Get.back();
+}},
 
 child: Text('Done',style: Styles.textStyle14W600PlusJakartaSans.copyWith(color: AppColors.primary),)),
       )],),
@@ -58,6 +61,7 @@ child: Text('Done',style: Styles.textStyle14W600PlusJakartaSans.copyWith(color: 
                const SecurityAndAccessWidget(),
                const SizedBox(height:AppSize.s40,),
                CustomButton( onPressed: () {
+                 if (controller.formKey.currentState!.validate()) {
   saveProfile(
     profileController: Get.find<ProfileController>(),
     fullName: controller.nameController.text,
@@ -65,7 +69,8 @@ child: Text('Done',style: Styles.textStyle14W600PlusJakartaSans.copyWith(color: 
     phoneNumber: controller.phoneController.text,
     dateOfBirth: controller.birthDateController.text,
   );
-},
+  Get.back();
+}},
 text:'SAVE CHANGES',radius: 99,
                textStyle:Styles.textStyle14W600PlusJakartaSans.copyWith(height: 1.4,color:Colors.white),
                backgroundColor:AppColors.primary,heightButton:50,withSide:F),

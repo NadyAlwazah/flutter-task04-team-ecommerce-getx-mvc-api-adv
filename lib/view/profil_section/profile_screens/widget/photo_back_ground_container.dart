@@ -16,36 +16,44 @@ final ProfileController controller =
     Get.find<ProfileController>();
   @override
   Widget build(BuildContext context) {
-    return Stack(children: [Padding(
-      padding:  EdgeInsets.symmetric(horizontal:140.w,vertical:22.h),
-      
-      child: Container(width: 100.w,height: 100.h,decoration:BoxDecoration(shape: BoxShape.circle,
-        color:AppColors.vipMemberColor,
-      boxShadow: [
-            BoxShadow(
-             color:AppColors.vipMemberColor.withOpacity(0.1),
-        spreadRadius:64,  
-        blurRadius:40,   
-        offset: Offset.zero,  
-            ),
-          ],  ),)),
+    return Center(
+      child: SizedBox(
+         height: 140.h,
+        child: Stack(
+          alignment: Alignment.center,
+          clipBehavior: Clip.none,
+       children: [Padding(
+          padding:  EdgeInsets.symmetric(horizontal:140.w,vertical:22.h),
           
-          Positioned(top:5.h,left:115.w,
-            child: Container(width:112.w,height:132.h,decoration:BoxDecoration(borderRadius: BorderRadius.circular(99),
-            gradient:LinearGradient(colors:[AppColors.imageGridentColor,AppColors.backgroundNumberColor,AppColors.vipMemberColor],
-            begin:Alignment.topRight,end: Alignment.bottomLeft)),
-            child:Center(child: Obx(() =>
-        CircleAvatar(foregroundImage:controller.profileImage.value != null
-        ? FileImage(controller.profileImage.value!):
-               NetworkImage(controller.userFakeData.user.profileImageUrl) as ImageProvider,radius:56,)),)),
-          ),
-          Positioned(top:95.h,left:185.w,
-            child:InkWell(onTap: controller.changeProfileImage,
-              child: Container(width:38.w,height:44.h,
-                decoration:BoxDecoration(borderRadius: BorderRadius.circular(99),
-                        color: AppColors.vipMemberColor),
-                        child: Center(child:SvgPicture.asset(AssetsData.edite,width: 15,),),),
-            ))
-          ],);
+          child: Container(width: 100.w,height: 100.h,decoration:BoxDecoration(shape: BoxShape.circle,
+            color:AppColors.vipMemberColor,
+          boxShadow: [
+                BoxShadow(
+                 color:AppColors.vipMemberColor.withOpacity(0.1),
+            spreadRadius:64,  
+            blurRadius:40,   
+            offset: Offset.zero,  
+                ),
+              ],  ),)),
+              
+              Positioned(top:5.h,left:115.w,
+                child: Container(width:112.w,constraints: BoxConstraints(minHeight:105.h),decoration:BoxDecoration(borderRadius: BorderRadius.circular(99),
+                gradient:LinearGradient(colors:[AppColors.imageGridentColor,AppColors.backgroundNumberColor,AppColors.vipMemberColor],
+                begin:Alignment.topRight,end: Alignment.bottomLeft)),
+                child:Center(child: Obx(() =>
+            CircleAvatar(foregroundImage:controller.profileImage.value != null
+            ? FileImage(controller.profileImage.value!):
+                   NetworkImage(controller.userFakeData.user.profileImageUrl) as ImageProvider,radius:56,)),)),
+              ),
+              Positioned(right:110.w,top:83.h,
+                 child:InkWell(onTap: controller.changeProfileImage,
+                  child: Container(width:38.w,height:42.h,
+                    decoration:BoxDecoration(borderRadius: BorderRadius.circular(99),
+                            color: AppColors.vipMemberColor),
+                            child: Center(child:SvgPicture.asset(AssetsData.edite,width: 15,),),),
+                ))
+              ],),
+      ),
+    );
   }
 }

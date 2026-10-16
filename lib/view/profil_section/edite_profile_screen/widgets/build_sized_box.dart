@@ -11,14 +11,16 @@ final String size;
   @override
   Widget build(BuildContext context) {
     return Container(
-    width: 80.w,height:110.h,
+    width: 80.w, constraints: BoxConstraints(
+    minHeight: 110.h,
+  ),
       decoration: BoxDecoration(
        border: Border.all(color:Colors.white.withOpacity(0.1)),
         color:AppColors.backgroundItem,
         borderRadius: BorderRadius.circular(16.0),
       ),
       child: Padding(
-        padding: const EdgeInsets.all(8.0),
+        padding: EdgeInsets.all(8.w),
         child: Column(mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -30,10 +32,12 @@ final String size;
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Text(
-                  size,
-                  style:Styles.textStyle18W400BodoniModa.copyWith(color: AppColors.atelierTextColor,height: 1.5) 
-                ),const SizedBox(width:16,),
+                Expanded(
+                  child: Text(
+                    size,
+                    style:Styles.textStyle18W400BodoniModa.copyWith(color: AppColors.atelierTextColor,height: 1.5) 
+                  ),
+                ), SizedBox(width:AppSize.s16.w,),
                 const Icon(
                   Icons.unfold_more,
                   size: 16,
