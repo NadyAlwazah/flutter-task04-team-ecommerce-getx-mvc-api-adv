@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/controllers/onboarding_controller.dart';
 import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/core/constants/styles.dart';
+import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/view/onboarding/controllers/onboarding_controller.dart';
 import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/view/onboarding/widgets/highlighted_heading.dart';
 import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/view/onboarding/widgets/onboarding_collage.dart';
 import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/widgets/custom_button.dart';

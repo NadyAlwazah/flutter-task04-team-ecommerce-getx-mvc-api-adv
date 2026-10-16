@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/core/constants/app_colors.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 abstract class Styles {
@@ -103,4 +104,15 @@ abstract class Styles {
     fontSize: 14.sp,
     fontWeight: FontWeight.w500,
   );
+  static TextStyle get textStyle10W700NimbusSans => TextStyle(
+  fontFamily: 'NimbusSans',
+  fontSize: 10.sp,
+  fontWeight: FontWeight.w700,
+  height: 1.5,
+  letterSpacing: 1,
+  color: AppColors.brown
+);
+
+
 }
+

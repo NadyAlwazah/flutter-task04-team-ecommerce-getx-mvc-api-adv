@@ -6,9 +6,8 @@ import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/core/routes/app_p
 import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/core/routes/app_routes.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
 
-void main() {
+void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-
   runApp(const ModernStore());
 }
 
@@ -25,8 +24,7 @@ class ModernStore extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         theme: ThemeData(scaffoldBackgroundColor: AppColors.backgroundColor),
         initialBinding: InitializeBinding(),
-        initialRoute: AppRoutes.kBottomBar,
-      //  initialRoute: AppRoutes.kBottomBar,
+        initialRoute: AppRoutes.kSplash,
         getPages: AppPages.getPages,
       ),
     );
