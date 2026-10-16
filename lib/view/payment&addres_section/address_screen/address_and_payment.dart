@@ -13,7 +13,6 @@ import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/view/payment&addr
 import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/view/payment&addres_section/address_model/address_model.dart';
 import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/view/payment&addres_section/address_widget/add_button.dart';
 import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/view/payment&addres_section/address_widget/addres_card.dart';
-import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/view/payment&addres_section/address_widget/payment_form_dialog.dart';
 
 class AddressAndPaymentScreen extends StatelessWidget {
   AddressAndPaymentScreen({super.key});

@@ -20,11 +20,10 @@ import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/view/payment&addr
 
 import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/bindings/notification_binding.dart';
 import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/view/details/details_view/details_view.dart';
-import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/view/profil_section/profile_screens/peofile_screen.dart';
 import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/view/search/search_controller/product_search_controller.dart';
 import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/view/search/search_view/search_view.dart';
 
-import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/view/splash/splash_view.dart';
+import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/view/splash/splash_view/splash_view.dart';
 import 'package:get/get.dart';
 import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/bindings/sign_in_binding.dart';
 import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/view/auth/sign_in/sign_in_view.dart';
@@ -41,7 +40,6 @@ class AppPages {
       page: () => const EditeProfileScreen(),
     ),
     GetPage(name: AppRoutes.kPastOrders, page: () => const PastOrderScreen()),
-    GetPage(name: AppRoutes.kProfile, page: () => const ProfileScreen()),
 
     GetPage(
       name: AppRoutes.kSignup,
