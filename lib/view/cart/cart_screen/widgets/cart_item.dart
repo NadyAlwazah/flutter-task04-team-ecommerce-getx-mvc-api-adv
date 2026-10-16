@@ -11,6 +11,7 @@ import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/widgets/app_actio
 import 'package:get/get.dart';
 
 import '../../../../core/constants/app_size.dart';
+import '../../../../core/constants/app_string.dart';
 
 class CartItem extends StatelessWidget {
   final String size;
@@ -86,8 +87,8 @@ class CartItem extends StatelessWidget {
                 if (removed) {
                   Get.dialog(
                     AppActionDialog(
-                      title: 'Removed From Cart',
-                      message: 'This product has been removed from your cart',
+                      title: AppString.removedFromCart,
+                      message: AppString.removeFromCartDesc,
                       icon: Icons.remove_shopping_cart_outlined,
                       product: product,
                     ),

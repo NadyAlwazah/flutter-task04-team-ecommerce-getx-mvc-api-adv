@@ -22,6 +22,7 @@ class ChangeQuantityWidget extends StatelessWidget {
               height: AppSize.s24.h,
               width: AppSize.s34.w,
               child: CustomButton(
+                padding: EdgeInsets.zero,
                 radius: AppSize.s20.r,
                 onPressed: () {
                   controller.increaseQuantity();
@@ -43,6 +44,7 @@ class ChangeQuantityWidget extends StatelessWidget {
               height: AppSize.s24.h,
               width: AppSize.s34.w,
               child: CustomButton(
+                padding: EdgeInsets.zero,
                 onPressed: () {
                   controller.decreaseQuantity();
                 },

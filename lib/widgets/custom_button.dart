@@ -20,6 +20,7 @@ class CustomButton extends StatelessWidget {
   final double heightButton;
   final bool iconOnRight;
   final TextStyle? textStyle;
+  final EdgeInsets? padding;
 
   const CustomButton({
     super.key,
@@ -38,6 +39,7 @@ class CustomButton extends StatelessWidget {
     this.heightButton = 48,
     this.iconOnRight = false,
     this.textStyle,
+    this.padding,
   });
 
   @override
@@ -45,7 +47,7 @@ class CustomButton extends StatelessWidget {
     return ElevatedButton(
       onPressed: onPressed,
       style: ElevatedButton.styleFrom(
-        padding: EdgeInsets.zero,
+        padding: padding,
         backgroundColor: backgroundColor,
         shadowColor: Colors.transparent,
         minimumSize: Size(double.infinity, heightButton.h),

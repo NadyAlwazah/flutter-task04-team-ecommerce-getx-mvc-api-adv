@@ -21,8 +21,8 @@ class CircleButton extends StatelessWidget {
     return GestureDetector(
       onTap: onTap,
       child: Container(
-        width: width.w,
-        height: height.h,
+        width: width.r,
+        height: height.r,
         decoration: BoxDecoration(
           shape: BoxShape.circle,
           color: backgroundColor ?? const Color(0xFF0F0F0F),

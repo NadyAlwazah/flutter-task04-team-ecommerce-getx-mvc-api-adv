@@ -20,4 +20,16 @@ class AppString {
 
   // cart screen
   static const String cart = 'CART';
+  static const String removedFromCart = "Removed From Cart";
+  static const String removeFromCartDesc =
+      "This product has been removed from your cart";
+  static const String addedToCart = "Added to Cart";
+  static const String addToCartDesc =
+      "This product has been added to your cart";
+  static const String removedFromWishlist = "Removed From Wishlist";
+  static const String removeFromWishlistDesc =
+      "This product has been removed from your wishlist";
+  static const String addedToWishlist = "Added to Wishlist";
+  static const String addToWishlistDesc =
+      "This product has been added to your wishlist";
 }
