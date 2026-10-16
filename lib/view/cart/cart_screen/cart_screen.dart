@@ -5,6 +5,7 @@ import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/controllers/cart_
 import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/core/constants/app_colors.dart';
 import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/core/constants/assets.dart';
 import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/view/cart/cart_screen/widgets/cart_item.dart';
+import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/view/details/details_view/widgets/product_options_section.dart';
 import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/widgets/circle_button.dart';
 import 'package:get/get.dart';
 
@@ -63,10 +64,17 @@ class CartScreen extends StatelessWidget {
             padding: EdgeInsets.symmetric(vertical: AppSize.s30.h),
             child: ListView.separated(
               itemBuilder: (context, index) {
-                return CartItem(
-                  size: 'XL',
-                  product: controller.cartItems[index],
+                final item = controller.cartItems[index];
+
+                final product = controller.getProductById(
+                  item['productId'] as int,
                 );
+
+                if (product == null) {
+                  return const SizedBox.shrink();
+                }
+
+                return CartItem(item: item, index: index, product: product);
               },
               separatorBuilder: (context, index) {
                 return Padding(

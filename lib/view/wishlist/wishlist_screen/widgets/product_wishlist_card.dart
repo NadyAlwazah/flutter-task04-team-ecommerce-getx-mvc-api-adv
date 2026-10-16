@@ -95,7 +95,7 @@ class ProductWishlistCard extends StatelessWidget {
                 width: AppSize.s139.w,
                 child: CustomButton(
                   onPressed: () async {
-                    await addToCart(product: product);
+                    await addToCart(product: product, size: 'L');
                   },
                   radius: AppSize.s9999.r,
                   iconTextSpacing: AppSize.s4,

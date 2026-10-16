@@ -13,12 +13,20 @@ import 'package:get/get.dart';
 import '../../../../core/constants/app_size.dart';
 
 class CartItem extends StatelessWidget {
-  final String size;
+  final Map<String, dynamic> item;
+  final int index;
   final ProductModel product;
-  const CartItem({super.key, required this.size, required this.product});
+
+  const CartItem({
+    super.key,
+    required this.item,
+    required this.index,
+    required this.product,
+  });
 
   @override
   Widget build(BuildContext context) {
+    final size = item['size'] as String;
     return Row(
       spacing: AppSize.s20.w,
       children: [
@@ -63,7 +71,7 @@ class CartItem extends StatelessWidget {
                   color: AppColors.priceColor,
                 ),
               ),
-              const ChangeQuantityWidget(),
+              ChangeQuantityWidget(index: index),
             ],
           ),
         ),
@@ -82,6 +90,7 @@ class CartItem extends StatelessWidget {
               onTap: () async {
                 final removed = await Get.find<CartController>().removeFromCart(
                   productId: product.id,
+                  size: size,
                 );
                 if (removed) {
                   Get.dialog(

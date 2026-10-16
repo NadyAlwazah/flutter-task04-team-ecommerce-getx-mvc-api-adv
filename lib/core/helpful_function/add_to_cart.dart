@@ -5,8 +5,11 @@ import 'package:get/get.dart';
 import '../../controllers/cart_controller.dart';
 import '../../widgets/app_action_dialog.dart';
 
-Future<void> addToCart({required ProductModel product}) async {
-  if (Get.find<CartController>().isInCart(product.id)) {
+Future<void> addToCart({
+  required ProductModel product,
+  required String size,
+}) async {
+  if (Get.find<CartController>().isInCart(productId: product.id, size: size)) {
     Get.dialog(
       AppActionDialog(
         title: 'Already added to Cart',
@@ -18,6 +21,7 @@ Future<void> addToCart({required ProductModel product}) async {
   } else {
     final added = await Get.find<CartController>().addToCart(
       productId: product.id,
+      size: size,
     );
     if (added) {
       Get.dialog(

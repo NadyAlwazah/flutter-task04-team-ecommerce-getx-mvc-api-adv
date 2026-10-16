@@ -1,3 +1,4 @@
+/*
 import 'package:get/get.dart';
 
 import '../../../controllers/products_controller.dart';
@@ -87,5 +88,161 @@ class CartController extends GetxController {
   void decreaseQuantity() {
     quantity--;
     update();
+  }
+}
+*/
+
+import 'dart:convert';
+
+import 'package:get/get.dart';
+
+import '../../../controllers/products_controller.dart';
+import '../../../core/constants/app_keys.dart';
+import '../../../core/services/shared_preferences_helper.dart';
+import '../../../models/product_model.dart';
+
+class CartController extends GetxController {
+  final RxList<Map<String, dynamic>> cartItems = <Map<String, dynamic>>[].obs;
+  final RxList<ProductModel> productsInCart = <ProductModel>[].obs;
+
+  @override
+  void onInit() {
+    super.onInit();
+    loadCart();
+  }
+
+  Future<void> loadCart() async {
+    final savedCart = await SharedPreferencesHelper.getList(AppKeys.kMyCart);
+
+    cartItems.assignAll(
+      (savedCart ?? <String>[])
+          .map((item) => Map<String, dynamic>.from(jsonDecode(item) as Map))
+          .toList(),
+    );
+
+    await _loadCartProducts();
+  }
+
+  Future<void> _loadCartProducts() async {
+    final productsController = Get.find<ProductsController>();
+
+    await productsController.getProducts();
+
+    final allProducts = productsController.allProducts;
+    final ids = cartItems.map((item) => item['productId'] as int).toSet();
+
+    productsInCart.assignAll(
+      allProducts.where((product) => ids.contains(product.id)),
+    );
+  }
+
+  Future<void> _saveCart() async {
+    final savedCart = cartItems.map((item) => jsonEncode(item)).toList();
+
+    await SharedPreferencesHelper.saveList(AppKeys.kMyCart, savedCart);
+  }
+
+  Future<bool> addToCart({required int productId, required String size}) async {
+    final existingIndex = cartItems.indexWhere(
+      (item) => item['productId'] == productId && item['size'] == size,
+    );
+
+    if (existingIndex != -1) {
+      return false;
+    }
+
+    cartItems.add({'productId': productId, 'size': size, 'quantity': 1});
+
+    final productsController = Get.find<ProductsController>();
+    final alreadyLoaded = productsController.allProducts.any(
+      (product) => product.id == productId,
+    );
+
+    if (!alreadyLoaded) {
+      await productsController.getProducts();
+    }
+
+    final product = productsController.allProducts.firstWhereOrNull(
+      (product) => product.id == productId,
+    );
+
+    if (product != null &&
+        !productsInCart.any((item) => item.id == productId)) {
+      productsInCart.add(product);
+    }
+
+    await _saveCart();
+    return true;
+  }
+
+  Future<bool> removeFromCart({
+    required int productId,
+    required String size,
+  }) async {
+    final initialLength = cartItems.length;
+
+    cartItems.removeWhere(
+      (item) => item['productId'] == productId && item['size'] == size,
+    );
+
+    if (cartItems.length == initialLength) {
+      return false;
+    }
+
+    final hasOtherSizes = cartItems.any(
+      (item) => item['productId'] == productId,
+    );
+
+    if (!hasOtherSizes) {
+      productsInCart.removeWhere((product) => product.id == productId);
+    }
+
+    await _saveCart();
+    return true;
+  }
+
+  bool isInCart({required int productId, required String size}) {
+    return cartItems.any(
+      (item) => item['productId'] == productId && item['size'] == size,
+    );
+  }
+
+  Future<void> increaseQuantity(int index) async {
+    cartItems[index]['quantity'] = (cartItems[index]['quantity'] as int) + 1;
+
+    cartItems.refresh();
+    await _saveCart();
+  }
+
+  Future<void> decreaseQuantity(int index) async {
+    final quantity = cartItems[index]['quantity'] as int;
+
+    if (quantity <= 1) return;
+
+    cartItems[index]['quantity'] = quantity - 1;
+
+    cartItems.refresh();
+    await _saveCart();
+  }
+
+  ProductModel? getProductById(int productId) {
+    return productsInCart.firstWhereOrNull(
+      (product) => product.id == productId,
+    );
+  }
+
+  // كمية عنصر محدد
+  int getQuantity(int index) {
+    return cartItems[index]['quantity'] as int;
+  }
+
+  // القياس لعنصر محدد
+  String getSize(int index) {
+    return cartItems[index]['size'] as String;
+  }
+
+  // ID المنتج لعنصر محدد
+  int getProductId(int index) {
+    return cartItems[index]['productId'] as int;
   }
 }

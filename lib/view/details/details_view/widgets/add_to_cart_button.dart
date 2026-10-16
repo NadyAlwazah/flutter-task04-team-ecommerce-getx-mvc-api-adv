@@ -1,12 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/controllers/cart_controller.dart';
 import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/core/constants/styles.dart';
 import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/core/helpful_function/add_to_cart.dart';
 import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/models/product_model.dart';
-import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/widgets/app_action_dialog.dart';
+import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/view/details/details_view/widgets/product_options_section.dart';
 import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/widgets/custom_button.dart';
-import 'package:get/get.dart';
 
 class AddToCartButton extends StatelessWidget {
   const AddToCartButton({super.key, required this.productModel});
@@ -27,7 +25,10 @@ class AddToCartButton extends StatelessWidget {
         radius: 40.r,
         backgroundColor: Colors.white,
         onPressed: () async {
-          await addToCart(product: productModel);
+          /*await addToCart(
+            product: productModel,
+
+          );*/
         },
       ),
     );
