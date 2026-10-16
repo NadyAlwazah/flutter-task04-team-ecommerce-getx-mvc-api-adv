@@ -20,7 +20,7 @@ class _ActivePastOrdersWidgetState extends State<ActivePastOrdersWidget> {
     final activeOrder = OrdersFakeData.activeOrders.length;
     final pastOrder = OrdersFakeData.pastOrders.length;
     return Container(
-      width: double.infinity,
+      constraints: BoxConstraints(minWidth: 358.w),
       height: 48,
       decoration: BoxDecoration(
         color: AppColors.backgroundItem,
@@ -37,7 +37,7 @@ class _ActivePastOrdersWidgetState extends State<ActivePastOrdersWidget> {
               GestureDetector(
                 onTap: () => widget.controller.changeTab('activity'),
                 child: Container(
-                  width: 166.w,
+                  width: 160.w,
                   height: 40.h,
                   decoration: BoxDecoration(
                     color: isActivity

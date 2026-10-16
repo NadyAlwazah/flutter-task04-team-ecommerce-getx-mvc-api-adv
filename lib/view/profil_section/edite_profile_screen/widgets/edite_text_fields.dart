@@ -5,7 +5,7 @@ import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/core/constants/ap
 import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/core/constants/styles.dart';
 
 class EditeTextFields extends StatelessWidget {
-  const EditeTextFields({super.key, required this.hintText, required this.type, required this.label, required this.badgeText, required this.isEmail, required this.suffixIcon, required this.icon, required this.controller,  });
+  const EditeTextFields({super.key, required this.hintText, required this.type, required this.label, required this.badgeText, required this.isEmail, required this.suffixIcon, required this.icon, required this.controller, this.validator,  });
 final String hintText;
 final TextInputType type;
 final String label;
@@ -13,6 +13,7 @@ final String badgeText;
 final bool isEmail;
 final bool suffixIcon;
 final String icon;
+final String? Function(String?)? validator;
 final TextEditingController controller;
   @override
   Widget build(BuildContext context) {
@@ -43,6 +44,7 @@ final TextEditingController controller;
         ),  
         const SizedBox(height:AppSize.s6,),  
       TextFormField(
+        validator: validator,
         style:Styles.textStyle15W400PlusJakartaSans.copyWith(color: AppColors.secondTextColor),
         controller: controller,
           keyboardType:type,  

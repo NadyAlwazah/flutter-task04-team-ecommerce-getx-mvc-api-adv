@@ -23,7 +23,7 @@ import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/view/details/deta
 import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/view/search/search_controller/product_search_controller.dart';
 import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/view/search/search_view/search_view.dart';
 
-import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/view/splash/splash_view.dart';
+import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/view/splash/splash_view/splash_view.dart';
 import 'package:get/get.dart';
 import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/bindings/sign_in_binding.dart';
 import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/view/auth/sign_in/sign_in_view.dart';

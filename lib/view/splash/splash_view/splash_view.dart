@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/core/constants/assets.dart';
-import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/widgets/orbit_circle.dart';
+import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/view/splash/splash_view/widgets/orbit_circle.dart';
 
 class SplashView extends StatelessWidget {
   const SplashView({super.key});
