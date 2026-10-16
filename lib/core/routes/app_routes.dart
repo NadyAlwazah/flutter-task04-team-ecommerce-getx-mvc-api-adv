@@ -12,5 +12,8 @@ abstract class AppRoutes {
   static const kAddressAndPayment = '/address_and_payment';
   static const kEditProfile = '/edit_profile';
   static const kNotifications = '/notifications';
+  static const kOrderHistoryAndTracking = '/order_history_and_tracking';
+  static const kPastOrders = '/past_order_screen';
   static const kBottomBar = '/bottom_bar';
+  static const kSearch = '/search';
 }

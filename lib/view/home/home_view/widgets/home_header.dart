@@ -4,8 +4,10 @@ import 'package:flutter_svg/svg.dart';
 import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/core/constants/app_colors.dart';
 import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/core/constants/assets.dart';
 import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/core/constants/styles.dart';
+import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/core/routes/app_routes.dart';
 import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/view/home/home_view/widgets/icon_with_badge.dart';
 import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/widgets/circle_button.dart';
+import 'package:get/get.dart';
 
 class HomeHeader extends StatelessWidget {
   const HomeHeader({super.key});
@@ -37,7 +39,7 @@ class HomeHeader extends StatelessWidget {
         ),
 
         CircleButton(
-          onTap: () {},
+          onTap: () => Get.toNamed(AppRoutes.kSearch),
           child: SvgPicture.asset(
             AssetsData.iconSearchSvg,
             width: 24.r,

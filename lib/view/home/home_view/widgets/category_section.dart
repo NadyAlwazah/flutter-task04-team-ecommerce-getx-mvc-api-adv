@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/core/classes/status_class.dart';
+import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/core/constants/app_colors.dart';
 import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/core/constants/app_size.dart';
 import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/core/constants/assets.dart';
 import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/core/constants/styles.dart';
@@ -44,6 +45,9 @@ class CategoriesSection extends GetView<CategoriesController> {
               return Center(
                 child: Text(
                   controller.status.message ?? "Something went wrong",
+                  style: Styles.textStyle14W600PlusJakartaSans.copyWith(
+                    color: AppColors.primary,
+                  ),
                 ),
               );
             }
