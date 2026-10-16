@@ -6,7 +6,9 @@ import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/core/constants/ap
 import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/core/constants/styles.dart';
 import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/core/helpful_function/add_to_cart.dart';
 import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/models/product_model.dart';
+import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/view/favorite_section/favorite_controller/favorite_controller.dart';
 import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/widgets/circle_button.dart';
+import 'package:get/get.dart';
 
 import '../../../../core/constants/assets.dart';
 import '../../../../widgets/custom_button.dart';
@@ -51,18 +53,27 @@ class ProductWishlistCard extends StatelessWidget {
                   ),
                 ),
               ),
-              Positioned(
-                top: AppSize.s10.h,
-                right: AppSize.s10.w,
-                child: CircleButton(
-                  height: AppSize.s32,
-                  width: AppSize.s32,
+              GetBuilder<FavoriteController>(
+                builder: (controller) {
+                  return Positioned(
+                    top: AppSize.s10.h,
+                    right: AppSize.s10.w,
+                    child: CircleButton(
+                      onTap: () {
+                        controller.toggleFavorite(product);
+                      },
+                      height: AppSize.s32,
+                      width: AppSize.s32,
 
-                  child: SvgPicture.asset(
-                    AssetsData.iconHeartFilledSvg,
-                    color: AppColors.heartFilledColor,
-                  ),
-                ),
+                      child: SvgPicture.asset(
+                        controller.isFavorite(product)
+                            ? AssetsData.iconHeartFilledSvg
+                            : AssetsData.iconHeartOutlineSvg,
+                        color: AppColors.heartFilledColor,
+                      ),
+                    ),
+                  );
+                },
               ),
             ],
           ),
