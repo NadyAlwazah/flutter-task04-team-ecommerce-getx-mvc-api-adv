@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/controllers/wishlist_controller.dart';
 import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/core/constants/app_size.dart';
 import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/core/constants/assets.dart';
 import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/models/product_model.dart';
 import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/view/details/details_view/widgets/product_image_preview.dart';
+import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/widgets/app_action_dialog.dart';
 import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/widgets/circle_button.dart';
 import 'package:get/get.dart';
 
@@ -13,6 +15,7 @@ class DetailsTopButtons extends StatelessWidget {
   final ProductModel productModel;
   @override
   Widget build(BuildContext context) {
+    final controller = Get.find<WishlistController>();
     return Positioned(
       top: 62.h,
       left: AppSize.s24.w,
@@ -27,13 +30,46 @@ class DetailsTopButtons extends StatelessWidget {
           ),
           Row(
             children: [
-              CircleButton(
-                onTap: () {},
-                backgroundColor: const Color(0xFF0F0F0F).withValues(alpha: .16),
-                child: Icon(
-                  Icons.bookmark_border,
-                  color: Colors.white,
-                  size: 24.r,
+              Obx(
+                () => CircleButton(
+                  /*onTap: () {
+                    controller.toggleWishlist(productModel.id);
+                  },*/
+                  onTap: () async {
+                    final added = await controller.toggleWishlist(
+                      productModel.id,
+                    );
+
+                    if (added) {
+                      Get.dialog(
+                        AppActionDialog(
+                          title: 'Added to Wishlist',
+                          message:
+                              'This product has been added to your wishlist',
+                          icon: Icons.bookmark_added,
+                          product: productModel,
+                        ),
+                      );
+                    } else {
+                      Get.dialog(
+                        AppActionDialog(
+                          title: 'Removed From Wishlist',
+                          message: 'This product has been removed from your wishlist',
+                          icon: Icons.bookmark_remove,
+                          product: productModel,
+                        ),
+                      );
+                    }
+                  },
+                  backgroundColor: const Color(0xFF0F0F0F)
+                      .withValues(alpha: .16),
+                  child: Icon(
+                    controller.isWishlisted(productModel.id)
+                        ? Icons.bookmark
+                        : Icons.bookmark_border,
+                    color: Colors.white,
+                    size: 24.r,
+                  ),
                 ),
               ),
               SizedBox(width: AppSize.s8.w),

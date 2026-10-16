@@ -21,6 +21,7 @@ class _ProductOptionsSectionState extends State<ProductOptionsSection> {
   ];
 
   final sizes = ['S', 'M', 'L', 'XL', 'XXL'];
+  //String selectedSize = 'XL';
 
   late Color selectedColor = colors.first;
 

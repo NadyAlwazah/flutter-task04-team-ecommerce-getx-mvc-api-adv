@@ -16,10 +16,14 @@ import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/view/my_order/my_
 import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/view/my_order/my_order_screen/past_order_screen.dart';
 import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/view/profil_section/edite_profile_screen/edite_profile_screen.dart';
 import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/view/bottom_bar/bottom_bar_view/bottom_bar_view.dart';
+
+import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/view/cart/cart_screen/cart_screen.dart';
+
 import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/view/notifaction_section/notification_screen/notifiction_screen.dart';
 import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/view/payment&addres_section/address_screen/address_and_payment.dart';
 
 import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/bindings/notification_binding.dart';
+
 import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/view/details/details_view/details_view.dart';
 import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/view/search/search_controller/product_search_controller.dart';
 import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/view/search/search_view/search_view.dart';
@@ -92,6 +96,9 @@ class AppPages {
         );
       }),
     ),
+
+    GetPage(name: AppRoutes.kCart, page: () => const CartScreen()),
+
     GetPage(
       name: AppRoutes.kOnBoarding,
       page: () => const OnboardingView(),

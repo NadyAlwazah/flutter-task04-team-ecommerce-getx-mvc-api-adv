@@ -20,7 +20,8 @@ class CustomButton extends StatelessWidget {
   final double heightButton;
   final bool iconOnRight;
   final TextStyle? textStyle;
-  final EdgeInsets?padding;
+
+  final EdgeInsets? padding;
 
   const CustomButton({
     super.key,
@@ -38,7 +39,8 @@ class CustomButton extends StatelessWidget {
     this.borderColor = Colors.black,
     this.heightButton = 48,
     this.iconOnRight = false,
-    this.textStyle, this.padding,
+    this.textStyle,
+    this.padding,
   });
 
   @override
