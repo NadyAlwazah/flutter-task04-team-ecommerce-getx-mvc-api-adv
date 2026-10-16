@@ -7,9 +7,10 @@ import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/view/notifaction_
 import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/view/notifaction_section/notification_widget/notification_read_card.dart';
 import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/view/notifaction_section/notification_widget/notification_un_read_card.dart';
 import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/view/notifaction_section/notifications_controller/notification_contrtoller.dart';
-import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/widgets/filter.dart';
+import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/view/notifaction_section/notification_widget/filter.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:get/get_instance/src/extension_instance.dart';
+import 'package:get/get_navigation/src/extension_navigation.dart';
 import 'package:get/get_state_manager/src/rx_flutter/rx_obx_widget.dart';
 
 class NotifictionScreen extends StatelessWidget {
@@ -20,7 +21,13 @@ class NotifictionScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(backgroundColor: AppColors.backgroundColor,
-        leading: Icon(Icons.arrow_back,color: AppColors.white,),
+      leading: IconButton(
+    onPressed: () => Get.back(),
+    icon: Icon(
+      Icons.arrow_back,
+      color: AppColors.white,
+    ),
+  ),
         title: Text(
           'Notifications',
           style: TextStyle(

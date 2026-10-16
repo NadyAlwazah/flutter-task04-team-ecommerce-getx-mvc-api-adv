@@ -8,6 +8,7 @@ import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/core/constants/ap
 import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/core/constants/assets.dart';
 import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/core/constants/styles.dart';
 import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/view/payment&addres_section/address_model/payment_card_model.dart';
+import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/widgets/custom_button.dart';
 
 class PaymentMainCard extends StatelessWidget {
   final PaymentCardModel card;
@@ -56,23 +57,23 @@ final bool isDefault;
               const Spacer(),
 
               if (isDefault)
-                Container(
-                  padding: const EdgeInsets.symmetric(
-                    horizontal: 10,
-                    vertical: 2,
-                  ),
-                  decoration: BoxDecoration(
-                    color: AppColors.primary,
-                    borderRadius: BorderRadius.circular(20.r),
-                  ),
-                  child: Text(
-                    'DEFAULT',
-                    style: Styles.textStyle10W600PlusJakartaSans
-                        .copyWith(
-                      color: AppColors.backgroundColor,
-                    ),
-                  ),
-                ),
+  IntrinsicWidth(
+    child: CustomButton(
+      text: 'DEFAULT',
+      heightButton: 20,
+      radius: 20.r,
+      padding: EdgeInsets.symmetric(
+        horizontal: 10.w,
+        vertical: 2.h,
+      ),
+      backgroundColor: AppColors.primary,
+      textColor: AppColors.backgroundColor,
+      textStyle: Styles.textStyle10W600PlusJakartaSans.copyWith(
+        color: AppColors.backgroundColor,
+      ),
+      onPressed: () {},
+    ),
+  ),
             ],
           ),
 
