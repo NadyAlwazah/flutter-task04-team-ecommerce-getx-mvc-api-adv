@@ -1,27 +1,4 @@
-
-
 import 'dart:developer';
-
-import 'package:http/http.dart' as http;
-
-Future<bool> checkInternet() async {
-  log('Checking Internet');
-
-  try {
-    final response = await http
-        .get(Uri.parse('https://www.google.com/generate_204'))
-        .timeout(const Duration(seconds: 5));
-
-    log('Internet check status: ${response.statusCode}');
-    return true;
-  } catch (e) {
-    log('Internet check failed: $e');
-    return false;
-  }
-}
-
-
-/*import 'dart:developer';
 import 'dart:io';
 
 Future<bool> checkInternet() async {
@@ -44,4 +21,4 @@ Future<bool> checkInternet() async {
     log(e.toString());
     return false;
   }
-}*/
+}
