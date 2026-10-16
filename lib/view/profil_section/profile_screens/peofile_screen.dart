@@ -140,7 +140,9 @@ class ProfileScreen extends StatelessWidget {
                 title: 'Notifications Settings',
                 subtitle: 'Push alerts, order updates &\npromotions',
                 icon: AssetsData.notification,
-                onTap: () {},
+                onTap: () {
+                  Get.toNamed(AppRoutes.kNotifications);
+                },
                 isLogOut: false,
               ),
               AccountConcierge(

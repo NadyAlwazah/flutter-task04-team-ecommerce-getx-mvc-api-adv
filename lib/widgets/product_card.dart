@@ -1,3 +1,4 @@
+
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -8,6 +9,7 @@ import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/core/constants/as
 import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/core/constants/styles.dart';
 import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/core/routes/app_routes.dart';
 import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/models/product_model.dart';
+import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/view/favorite_section/favorite_controller/favorite_controller.dart';
 import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/widgets/app_loader.dart';
 import 'package:get/get.dart';
 
@@ -18,6 +20,7 @@ class ProductCard extends StatelessWidget {
     required this.productModel,
     this.isFavorite = false,
   });
+
   final ProductModel productModel;
   final bool isFavorite;
   final VoidCallback? onFavoriteTap;
@@ -27,7 +30,9 @@ class ProductCard extends StatelessWidget {
     return Container(
       width: 155.w,
       height: 230.h,
-      decoration: BoxDecoration(borderRadius: BorderRadius.circular(30.r)),
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(30.r),
+      ),
       clipBehavior: Clip.antiAlias,
       child: Stack(
         children: [
@@ -35,9 +40,12 @@ class ProductCard extends StatelessWidget {
             child: CachedNetworkImage(
               imageUrl: productModel.images.first,
               fit: BoxFit.cover,
-              placeholder: (context, url) => const Center(child: AppLoader()),
+              placeholder: (context, url) =>
+                  const Center(child: AppLoader()),
               errorWidget: (context, url, error) =>
-                  const Center(child: Icon(Icons.error, color: Colors.white)),
+                  const Center(
+                    child: Icon(Icons.error, color: Colors.white),
+                  ),
             ),
           ),
 
@@ -55,25 +63,36 @@ class ProductCard extends StatelessWidget {
               ),
             ),
           ),
+
           Positioned(
             top: AppSize.s12,
             right: AppSize.s14,
-            child: GestureDetector(
-              onTap: onFavoriteTap,
-              child: Container(
-                padding: const EdgeInsets.all(4.36),
-                decoration: const BoxDecoration(
-                  color: AppColors.primary,
-                  shape: BoxShape.circle,
-                ),
-                child: SvgPicture.asset(
-                  isFavorite
-                      ? AssetsData.iconHeartFilledSvg
-                      : AssetsData.iconHeartOutlineSvg,
-                  width: 15.272727012634277.r,
-                  height: 15.272727012634277.r,
-                ),
-              ),
+            child: GetBuilder<FavoriteController>(
+              builder: (favoriteController) {
+                final selected =
+                    favoriteController.isFavorite(productModel);
+
+                return GestureDetector(
+                  onTap: () {
+                    favoriteController.toggleFavorite(productModel);
+                    onFavoriteTap?.call();
+                  },
+                  child: Container(
+                    padding: const EdgeInsets.all(4.36),
+                    decoration: const BoxDecoration(
+                      color: AppColors.primary,
+                      shape: BoxShape.circle,
+                    ),
+                    child: SvgPicture.asset(
+                      selected
+                          ? AssetsData.iconHeartFilledSvg
+                          : AssetsData.iconHeartOutlineSvg,
+                      width: 15.272727012634277.r,
+                      height: 15.272727012634277.r,
+                    ),
+                  ),
+                );
+              },
             ),
           ),
 
@@ -108,8 +127,10 @@ class ProductCard extends StatelessWidget {
             right: AppSize.s14,
             bottom: 15,
             child: InkWell(
-              onTap: () =>
-                  Get.toNamed(AppRoutes.kDetails, arguments: productModel),
+              onTap: () => Get.toNamed(
+                AppRoutes.kDetails,
+                arguments: productModel,
+              ),
               child: Container(
                 width: 22.r,
                 height: 22.r,
