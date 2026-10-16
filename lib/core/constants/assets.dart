@@ -1,3 +1,5 @@
+import 'package:flutter/material.dart';
+
 class AssetsData {
   static const _images = "assets/images/";
   static const _icons = "assets/icons/";
@@ -44,4 +46,10 @@ class AssetsData {
   static const iconDiscoverStyleInnerFrameSvg = "${_icons}style_inner.svg";
   static const iconHeartFilledSvg = "${_icons}heart_filled.svg";
   static const iconFullscreenSvg = "${_icons}fullscreen_icon.svg";
+   static const IconButtonBag = "${_icons}Button - Bag.svg";
+    static const containerFilter = "${_icons}container_filter.svg";
+      static const search = "${_icons}search_icon.svg";
+
+
+
 }

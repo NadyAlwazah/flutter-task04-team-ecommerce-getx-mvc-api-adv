@@ -26,6 +26,7 @@ class ModernStore extends StatelessWidget {
         theme: ThemeData(scaffoldBackgroundColor: AppColors.backgroundColor),
         initialBinding: InitializeBinding(),
         initialRoute: AppRoutes.kBottomBar,
+      //  initialRoute: AppRoutes.kBottomBar,
         getPages: AppPages.getPages,
       ),
     );

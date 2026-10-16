@@ -28,7 +28,7 @@ class ProductsController extends GetxController {
     update();
 
     final result = await crud.getData(endPoint: AppLinks.products);
-
+print('PRODUCTS API RESULT: $result');
     result.fold(
       (failure) {
         status = failure.toStatusClass();

@@ -1,4 +1,31 @@
+
 import 'package:flutter/material.dart';
+import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/view/bottom_bar/bottom_bar_model/nav_item.dart';
+
+class BottomBarItems {
+  static const List<NavItem> items = [
+    NavItem(
+      icon: Icons.home_outlined,
+      activeIcon: Icons.home_rounded,
+      label: 'Home',
+    ),
+    NavItem(
+      icon: Icons.favorite_border,
+      activeIcon: Icons.favorite,
+      label: 'Favorite',
+    ),
+  ];
+}
+
+
+
+
+
+
+
+
+
+/*import 'package:flutter/material.dart';
 import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/view/bottom_bar/bottom_bar_model/nav_item.dart';
 
 class BottomBarItems {
@@ -30,4 +57,4 @@ class BottomBarItems {
       label: 'Profile',
     ),
   ];
-}
+}*/
