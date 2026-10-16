@@ -2,7 +2,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/core/constants/app_colors.dart';
 import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/core/constants/app_size.dart';
-import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/core/constants/app_string.dart';
 import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/core/constants/styles.dart';
 
 Widget itemCountWidget({required int count}) {
@@ -21,7 +20,7 @@ Widget itemCountWidget({required int count}) {
       ),
     ),
     child: Text(
-      '$count ${AppString.items}',
+      '$count Items',
       style: Styles.textStyle12W500PlusJakartaSans.copyWith(
         color: AppColors.priceColor,
       ),

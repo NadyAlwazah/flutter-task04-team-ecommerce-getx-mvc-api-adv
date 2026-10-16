@@ -5,16 +5,12 @@ import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/controllers/wishl
 import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/core/classes/status_class.dart';
 import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/core/constants/app_colors.dart';
 import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/core/constants/app_size.dart';
-import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/core/constants/app_string.dart';
-import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/core/constants/app_values.dart';
 import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/core/constants/assets.dart';
 import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/core/constants/styles.dart';
-import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/models/product_model.dart';
 import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/view/wishlist/wishlist_screen/widgets/item_count_widget.dart';
 import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/view/wishlist/wishlist_screen/widgets/product_wishlist_card.dart';
 import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/view/wishlist/wishlist_screen/widgets/wishlist_banner.dart';
 import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/widgets/app_loader.dart';
-import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/widgets/custom_app_bar.dart';
 import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/widgets/custom_tabs.dart';
 import 'package:get/get.dart';
 
@@ -25,10 +21,35 @@ class WishlistScreen extends StatelessWidget {
     final controller = Get.find<WishlistController>();
     return Obx(
       () => Padding(
-        padding: AppValues.screenPadding,
+        padding: EdgeInsets.symmetric(
+          horizontal: AppSize.s20.w,
+          vertical: AppSize.s12.h,
+        ),
         child: Scaffold(
-          appBar: CustomAppBar(
-            title: AppString.atelier,
+          appBar: AppBar(
+            leading: Center(
+              child: SizedBox(
+                width: AppSize.s16.w,
+                height: AppSize.s16.h,
+                child: SvgPicture.asset(
+                  AssetsData.iconSearchSvg,
+                  fit: BoxFit.contain,
+                ),
+              ),
+            ),
+            title: Text(
+              'ATELIER',
+              style: Styles.textStyle20W500BodoniModa.copyWith(
+                color: AppColors.whiteText,
+              ),
+            ),
+            shape: Border(
+              bottom: BorderSide(
+                color: AppColors.appBarBorder,
+                width: AppSize.s1.w,
+              ),
+            ),
+            backgroundColor: AppColors.backgroundColor,
             centerTitle: true,
             actions: [
               SvgPicture.asset(
@@ -37,8 +58,8 @@ class WishlistScreen extends StatelessWidget {
                 height: AppSize.s16.h,
               ),
             ],
-            isSerach: true,
           ),
+
           body: SingleChildScrollView(
             padding: EdgeInsets.symmetric(vertical: AppSize.s30.h),
             child: Column(
@@ -49,13 +70,13 @@ class WishlistScreen extends StatelessWidget {
                     Column(
                       children: [
                         Text(
-                          AppString.curationArchive,
+                          'CURATION ARCHIVE',
                           style: Styles.textStyle10W600PlusJakartaSans.copyWith(
                             color: AppColors.lightPrimaryText,
                           ),
                         ),
                         Text(
-                          AppString.wishlist,
+                          'Wishlist',
                           style: Styles.textStyle28W500BodoniModa.copyWith(
                             color: AppColors.whiteText,
                           ),
@@ -73,7 +94,7 @@ class WishlistScreen extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Text(
-                          AppString.allItems,
+                          'ALL ITEMS',
                           style: Styles.textStyle10W600PlusJakartaSans.copyWith(
                             color: AppColors.brownText,
                           ),
@@ -90,7 +111,7 @@ class WishlistScreen extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Text(
-                          AppString.outerwear,
+                          'OUTERWEAR',
                           style: Styles.textStyle10W600PlusJakartaSans.copyWith(
                             color: AppColors.tabTextColor,
                           ),
@@ -107,7 +128,7 @@ class WishlistScreen extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Text(
-                          AppString.tops,
+                          'TOPS',
                           style: Styles.textStyle10W600PlusJakartaSans.copyWith(
                             color: AppColors.tabTextColor,
                           ),
@@ -124,7 +145,7 @@ class WishlistScreen extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Text(
-                          AppString.shirts,
+                          'SHIRTS',
                           style: Styles.textStyle10W600PlusJakartaSans.copyWith(
                             color: AppColors.tabTextColor,
                           ),
@@ -147,7 +168,7 @@ class WishlistScreen extends StatelessWidget {
                     : controller.status == StatusClass.noData
                     ? Center(
                         child: Text(
-                          '${AppString.noData} \n \n',
+                          'No Items available \n \n',
                           style: Styles.textStyle14W500ClashDisplay.copyWith(
                             color: AppColors.primary,
                           ),

@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/core/constants/app_size.dart';
+import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/core/constants/styles.dart';
+import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/view/bottom_bar/bottom_bar_view/widgets/custom_bottom_bar.dart';
+import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/widgets/custom_button.dart';
 import 'package:get/get.dart';
 
 import '../core/constants/app_colors.dart';
@@ -44,9 +47,8 @@ class AppActionDialog extends StatelessWidget {
             Text(
               title,
               textAlign: TextAlign.center,
-              style: TextStyle(
-                fontSize: AppSize.s20.sp,
-                fontWeight: FontWeight.w600,
+              style: Styles.textStyle20W600ClashDisplay.copyWith(
+                color: AppColors.whiteText,
               ),
             ),
 
@@ -55,8 +57,7 @@ class AppActionDialog extends StatelessWidget {
             Text(
               message,
               textAlign: TextAlign.center,
-              style: TextStyle(
-                fontSize: AppSize.s14.sp,
+              style: Styles.textStyle14W500ClashDisplay.copyWith(
                 color: AppColors.tabTextColor,
               ),
             ),
@@ -68,15 +69,21 @@ class AppActionDialog extends StatelessWidget {
               textAlign: TextAlign.center,
               maxLines: 2,
               overflow: TextOverflow.ellipsis,
-              style: TextStyle(
-                fontSize: AppSize.s15.sp,
-                fontWeight: FontWeight.w500,
+              style: Styles.textStyle16W500ClashDisplay.copyWith(
+                color: AppColors.whiteText,
               ),
             ),
 
             SizedBox(height: AppSize.s24.h),
-
-            SizedBox(
+            CustomButton(
+              onPressed: () => Get.back(),
+              backgroundColor: AppColors.priceColor,
+              textColor: AppColors.whiteText,
+              padding: EdgeInsets.symmetric(vertical: AppSize.s14.h),
+              radius: AppSize.s12.r,
+              text: buttonText,
+            ),
+            /*SizedBox(
               width: double.infinity,
               child: ElevatedButton(
                 onPressed: () => Get.back(),
@@ -90,7 +97,7 @@ class AppActionDialog extends StatelessWidget {
                 ),
                 child: Text(buttonText),
               ),
-            ),
+            ),*/
           ],
         ),
       ),

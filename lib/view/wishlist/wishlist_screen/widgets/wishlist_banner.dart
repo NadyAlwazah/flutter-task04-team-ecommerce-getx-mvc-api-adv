@@ -2,10 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/core/constants/app_colors.dart';
-import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/core/constants/app_string.dart';
 import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/core/constants/assets.dart';
 import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/core/constants/styles.dart';
-import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/core/routes/app_routes.dart';
 import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/view/bottom_bar/bottom_bar_controller/bottom_bar_controller.dart';
 import 'package:get/get.dart';
 
@@ -38,13 +36,13 @@ Widget wishlistBanner() {
       children: [
         const Spacer(),
         Text(
-          AppString.yourCuratedArchive,
+          'Your Curated Archive',
           style: Styles.textStyle24W400BodoniModa.copyWith(
             color: AppColors.tabTextColor,
           ),
         ),
         Text(
-          '${AppString.curatedArchiveDescription}\n',
+          'Items saved to your personal sanctuary remain reserved for 14 days before returning to the global collection\n',
           textAlign: TextAlign.center,
           style: Styles.textStyle13W400PlusJakartaSans.copyWith(
             color: AppColors.whiteText,
@@ -58,7 +56,7 @@ Widget wishlistBanner() {
             },
             icon: SvgPicture.asset(AssetsData.iconArchiveSvg),
             backgroundColor: AppColors.greyBannerButtonBackground,
-            text: AppString.discoverNewArrivals,
+            text: 'DISCOVER NEW ARRIVALS',
             textStyle: Styles.textStyle12W500PlusJakartaSans.copyWith(
               color: AppColors.whiteText,
             ),
