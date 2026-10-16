@@ -23,17 +23,10 @@ class ModernStore extends StatelessWidget {
       splitScreenMode: true,
       builder: (context, child) => GetMaterialApp(
         debugShowCheckedModeBanner: false,
-        theme: ThemeData(scaffoldBackgroundColor: AppColors.backgroundColor,
-        appBarTheme: const AppBarTheme(
-            backgroundColor: AppColors.backgroundColorAppBar,
-            foregroundColor: Colors.white,
-            elevation: 0,
-            iconTheme: IconThemeData(
-              color: Color(0xFFE5E2E1),
-            ),)
-        ),
+        theme: ThemeData(scaffoldBackgroundColor: AppColors.backgroundColor),
         initialBinding: InitializeBinding(),
-        initialRoute:AppRoutes.kAddressAndPayment,
+        initialRoute: AppRoutes.kAddressAndPayment,
+      //  initialRoute: AppRoutes.kBottomBar,
         getPages: AppPages.getPages,
       ),
     );
