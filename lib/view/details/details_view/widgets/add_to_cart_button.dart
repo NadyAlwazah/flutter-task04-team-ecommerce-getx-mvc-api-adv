@@ -3,7 +3,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/core/constants/styles.dart';
 import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/core/helpful_function/add_to_cart.dart';
 import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/models/product_model.dart';
-import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/view/details/details_view/widgets/product_options_section.dart';
 import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/widgets/custom_button.dart';
 import 'package:get/get.dart';
 
