@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/core/constants/app_colors.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 abstract class Styles {
@@ -7,6 +8,8 @@ abstract class Styles {
 
   static TextStyle get textStyle28W500BodoniModa =>
       GoogleFonts.bodoniModa(fontSize: 28.sp, fontWeight: FontWeight.w500);
+  static TextStyle get textStyle24W500BodoniModa =>
+      GoogleFonts.bodoniModa(fontSize: 28.sp, fontWeight: FontWeight.w500,color: Colors.white,height: 1.5,letterSpacing: -0.6);
 
   static TextStyle get textStyle24W400BodoniModa =>
       GoogleFonts.bodoniModa(fontSize: 24.sp, fontWeight: FontWeight.w400);
@@ -22,6 +25,8 @@ abstract class Styles {
 
   static TextStyle get textStyle13W400BodoniModa =>
       GoogleFonts.bodoniModa(fontSize: 13.sp, fontWeight: FontWeight.w400);
+  static TextStyle get textStyle18W700BodoniModa =>
+      GoogleFonts.bodoniModa(fontSize: 18.sp, fontWeight: FontWeight.w700);
 
   //! Plus Jakarta Sans
 
@@ -36,6 +41,10 @@ abstract class Styles {
 
   static TextStyle get textStyle13W400PlusJakartaSans =>
       GoogleFonts.plusJakartaSans(fontSize: 13.sp, fontWeight: FontWeight.w400);
+  static TextStyle get textStyle11W400PlusJakartaSans =>
+      GoogleFonts.plusJakartaSans(fontSize: 11.sp, fontWeight: FontWeight.w400);
+  static TextStyle get textStyle15W400PlusJakartaSans =>
+      GoogleFonts.plusJakartaSans(fontSize: 15.sp, fontWeight: FontWeight.w400);
 
   static TextStyle get textStyle12W500PlusJakartaSans =>
       GoogleFonts.plusJakartaSans(fontSize: 12.sp, fontWeight: FontWeight.w500);
@@ -45,6 +54,10 @@ abstract class Styles {
 
   static TextStyle get textStyle10W600PlusJakartaSans =>
       GoogleFonts.plusJakartaSans(fontSize: 10.sp, fontWeight: FontWeight.w600);
+  static TextStyle get textStyle12W700PlusJakartaSans =>
+      GoogleFonts.plusJakartaSans(fontSize: 12.sp, fontWeight: FontWeight.w700);
+  static TextStyle get textStyle12W300PlusJakartaSans =>
+      GoogleFonts.plusJakartaSans(fontSize: 12.sp, fontWeight: FontWeight.w300);
 
   //! Clash Display
   static TextStyle get textStyle34W500ClashDisplay => TextStyle(
@@ -91,4 +104,15 @@ abstract class Styles {
     fontSize: 14.sp,
     fontWeight: FontWeight.w500,
   );
+  static TextStyle get textStyle10W700NimbusSans => TextStyle(
+  fontFamily: 'NimbusSans',
+  fontSize: 10.sp,
+  fontWeight: FontWeight.w700,
+  height: 1.5,
+  letterSpacing: 1,
+  color: AppColors.brown
+);
+
+
 }
+

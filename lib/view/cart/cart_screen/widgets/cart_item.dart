@@ -68,7 +68,7 @@ class CartItem extends StatelessWidget {
               Text(
                 '\$${product.price}',
                 style: Styles.textStyle14W500ClashDisplay.copyWith(
-                  color: AppColors.priceColor,
+                  color: AppColors.price2Color,
                 ),
               ),
               ChangeQuantityWidget(index: index),

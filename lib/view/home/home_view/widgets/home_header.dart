@@ -54,12 +54,14 @@ class HomeHeader extends StatelessWidget {
           onTap: () {
             Get.toNamed(AppRoutes.kCart);
           },
-          child: IconWithBadge(
-            count: Get.find<CartController>().cartItems.length,
-            child: SvgPicture.asset(
-              AssetsData.iconBagWelcomeSvg,
-              width: 24.r,
-              height: 24.r,
+          child: Obx(
+            () => IconWithBadge(
+              count: Get.find<CartController>().cartItems.length,
+              child: SvgPicture.asset(
+                AssetsData.iconBagWelcomeSvg,
+                width: 24.r,
+                height: 24.r,
+              ),
             ),
           ),
         ),

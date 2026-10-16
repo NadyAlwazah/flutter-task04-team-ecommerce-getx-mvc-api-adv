@@ -3,6 +3,7 @@ import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/controllers/wishl
 import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/core/classes/crud.dart';
 import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/view/bottom_bar/bottom_bar_controller/bottom_bar_controller.dart';
 import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/view/home/controllers/categories_controller.dart';
+import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/view/profil_section/controller/profile_controller.dart';
 import 'package:get/get.dart';
 
 import '../controllers/cart_controller.dart';
@@ -19,6 +20,9 @@ class BottomBarBinding extends Bindings {
     Get.lazyPut<ProductsController>(
       () => ProductsController(crud: Get.find<Crud>()),
     );
+
     Get.lazyPut<WishlistController>(() => WishlistController());
+
+    Get.lazyPut<ProfileController>(() => ProfileController());
   }
 }

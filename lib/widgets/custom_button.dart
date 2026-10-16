@@ -20,6 +20,7 @@ class CustomButton extends StatelessWidget {
   final double heightButton;
   final bool iconOnRight;
   final TextStyle? textStyle;
+
   final EdgeInsets? padding;
 
   const CustomButton({

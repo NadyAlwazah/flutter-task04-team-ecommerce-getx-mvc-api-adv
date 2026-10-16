@@ -4,4 +4,5 @@ class AppKeys {
   static const String kFavoriteIds = 'favorite_ids';
   static const String kWishlistIds = 'wishlist_ids';
   static const String kMyCart = 'cart_items';
+  static const String kOnboardingSeen = 'onboarding_seen';
 }

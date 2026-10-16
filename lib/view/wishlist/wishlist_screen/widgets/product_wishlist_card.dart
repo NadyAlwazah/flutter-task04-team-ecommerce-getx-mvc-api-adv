@@ -87,7 +87,7 @@ class ProductWishlistCard extends StatelessWidget {
               Text(
                 '\$${product.price}',
                 style: Styles.textStyle14W600PlusJakartaSans.copyWith(
-                  color: AppColors.priceColor,
+                  color: AppColors.price2Color,
                 ),
               ),
               SizedBox(

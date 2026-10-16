@@ -22,7 +22,7 @@ Widget itemCountWidget({required int count}) {
     child: Text(
       '$count Items',
       style: Styles.textStyle12W500PlusJakartaSans.copyWith(
-        color: AppColors.priceColor,
+        color: AppColors.price2Color,
       ),
     ),
   );

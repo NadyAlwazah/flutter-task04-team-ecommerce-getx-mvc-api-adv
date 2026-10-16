@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/core/constants/styles.dart';
+import 'package:flutter_task04_team_ecommerce_getx_mvc_api_adv/view/details/details_controller/details_controller.dart';
+import 'package:get/get.dart';
 
 class ProductOptionsSection extends StatefulWidget {
   const ProductOptionsSection({super.key});
@@ -10,6 +12,7 @@ class ProductOptionsSection extends StatefulWidget {
 }
 
 class _ProductOptionsSectionState extends State<ProductOptionsSection> {
+  final DetailsController controller = Get.find<DetailsController>();
   // القيم المتاحة
   final colors = [
     Colors.teal.shade900,
@@ -18,7 +21,7 @@ class _ProductOptionsSectionState extends State<ProductOptionsSection> {
   ];
 
   final sizes = ['S', 'M', 'L', 'XL', 'XXL'];
-  String selectedSize = 'XL';
+  //String selectedSize = 'XL';
 
   late Color selectedColor = colors.first;
 
@@ -89,9 +92,10 @@ class _ProductOptionsSectionState extends State<ProductOptionsSection> {
             ),
           ),
           SizedBox(width: 10.w),
-          DropdownButtonHideUnderline(
-            child: DropdownButton<String>(
-              value: selectedSize,
+
+          Obx(
+            () => DropdownButton<String>(
+              value: controller.selectedSize.value,
               dropdownColor: Colors.black,
               style: Styles.textStyle16W500ClashDisplay.copyWith(
                 color: Colors.white,
@@ -101,7 +105,11 @@ class _ProductOptionsSectionState extends State<ProductOptionsSection> {
                 for (final s in sizes)
                   DropdownMenuItem(value: s, child: Text(s)),
               ],
-              onChanged: (s) => setState(() => selectedSize = s!),
+              onChanged: (s) {
+                if (s != null) {
+                  controller.changeSize(s);
+                }
+              },
             ),
           ),
         ],
